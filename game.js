@@ -52,4 +52,18 @@ export class Game {
             return card;
         }
     }
+    render(id, element) {
+        // 0/1 for player, -1 for deck and discard
+        if (id >= 0) {
+            const hand = this.players[id];
+            Object.keys(hand).forEach(name => {
+                for (let i = 0; i < hand[name]; i++) {
+                    const card = document.createElement("img");
+                    card.src = "./Assets/" + name + ".png";
+                    card.classList.add("card");
+                    element.appendChild(card);
+                }
+            });
+        }
+    }
 }

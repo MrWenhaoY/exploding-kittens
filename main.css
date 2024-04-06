@@ -1,0 +1,9 @@
+body {
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+}
