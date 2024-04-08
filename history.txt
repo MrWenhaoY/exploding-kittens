@@ -1,2 +1,6 @@
 4/6/2024
  - Created all the files, started work
+ - Created basic game interface
+4/7/2024
+ - Improved game automation
+ - Start analysis with only skips
