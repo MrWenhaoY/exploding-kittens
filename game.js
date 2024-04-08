@@ -5,7 +5,7 @@ export class Game {
         this.deck = [];
         this.discard = []; // discard pile
         this.winner = -1;
-        //console.log('p0Element', p0Element);
+        this.turnHandlers = [];
         this.p0Element = p0Element;
         this.p1Element = p1Element;
         this.tableElement = tableElement;
@@ -34,35 +34,45 @@ export class Game {
     }
     play(playerId, card) {
         // TODO: Implement Nopes and Defuses
-        if (this.turn % 2 == playerId && players[card] > 0) {
+        if (this.turn % 2 == playerId && this.players[playerId][card] > 0 && this.winner === -1) {
             console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
-            if (--players[card] <= 0) delete players[card];
+            if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
             switch(card) {
                 case "skip":
-                    this.turn++;
-                    this.render();
+                    this.discard.unshift(card);
+                    this.endTurn();
                     break;
                 default:
                     console.log("Card '" + String(card) + "' not recognized.");
+                    return;
             }
+            
         }
     }
     draw(playerId) {
-        if (this.turn % 2 == playerId) {
+        if (this.turn % 2 == playerId && this.winner === -1) {
             const card = this.deck.shift();
-            if (card == "explode") {
-                console.log("Player: " + String(playerId) + " has exploded.");
-                this.winner = 1 - playerId;
-                return;
-            }
             console.log("Player: " + String(playerId) + " has drawn a card.");
             const hand = this.players[playerId];
             card in hand ? hand[card]++ : hand[card] = 1;
-            this.turn++;
-            // Render automatically
-            this.render();
+            if (card == "explode") {
+                console.log("Player: " + String(playerId) + " has exploded.");
+                this.endGame(1 - playerId);
+                return;
+            }
+            this.endTurn();
             return card;
         }
+    }
+    endTurn() {
+        this.turn++;
+        this.turnHandlers.forEach(x => x(this));
+        this.render();
+    }
+    endGame(winner) {
+        this.winner = winner;
+        this.turnHandlers = [];
+        this.render();
     }
     render() {
         this.players.forEach((hand, id) => {
