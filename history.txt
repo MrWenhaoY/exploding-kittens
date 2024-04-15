@@ -4,3 +4,6 @@
 4/7/2024
  - Improved game automation
  - Start analysis with only skips
+4/15/2024
+ - Made Notes folder
+ - Analysis of no cards played game

@@ -1,0 +1,15 @@
+Exploding Kittens, where no cards are played. (2 player, as usual)
+*This is just Russian Roulette at this point*
+
+Assuming 1 Kitten with x cards total in the deck...
+ - Drawing the kitten on top of the deck is 1/x
+ - Drawing the kitten as second card on deck is (x-1)/x * 1/(x-1) = 1/x
+ - Drawing the kitten as third card is (x-1)/x * (x-2)/(x-1) * 1/(x-2) = 1/x
+ - Thus, chance of player1 exploding is ceil(x/2)/x = slightly greater if the # of cards in the deck is odd
+ - Chance of player2 exploding is floor(x/2)/x = slightly less if x is odd
+ - If x is even, it is a 50-50
+
+Assuming e Kittens and x cards,
+ - First card bomb is e/x
+ - Second card bomb is (x-e)/x * (e)/(x-1) = e/x * (x-e)/(x-1)
+ - Third card bomb is (x-e)/x * (x-e-1)/(x-1) * (e)/(x-2) = e/x * (x-e)/(x-1) * (x-e-1)/(x-2)
