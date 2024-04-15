@@ -11,3 +11,9 @@
     - winChance(x, y) = 
        - draw: (x-1)/x * [1/(x-1) + (x-2)/(x-1) * winChance(x-2, 1)]
        - skip: 1/x + (x-1)/x * winChance(x-1, y-1)
+ - Try running `results = calc.winChanceDP(15,5)`
+
+ TODO:
+  - Add a new card
+  - Skips with intelligent opponent
+  - Maybe do out analysis of winrate for e exploding kittens and x cards total in deck
