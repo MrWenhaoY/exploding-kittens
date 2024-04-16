@@ -55,6 +55,7 @@ export class Game {
             console.log("Player: " + String(playerId) + " has drawn a card.");
             const hand = this.players[playerId];
             card in hand ? hand[card]++ : hand[card] = 1;
+            this.render();
             if (card == "explode") {
                 console.log("Player: " + String(playerId) + " has exploded.");
                 this.endGame(1 - playerId);
@@ -66,6 +67,7 @@ export class Game {
     }
     endTurn() {
         this.turn++;
+        console.log("It is now Turn " + String(this.turn));
         this.turnHandlers.forEach(x => x(this));
         this.render();
     }

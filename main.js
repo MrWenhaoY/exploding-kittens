@@ -1,6 +1,7 @@
 import {Game} from "./game.js";
-import { DumbBot } from "./dumbBot.js";
+import { DumbBot } from "./bots.js";
 import * as c from "./calculations.js";
+import {winChanceDP} from "./Notes/1-skip.js";
 
 window.calc = c;
 
@@ -10,11 +11,9 @@ const p1 = document.getElementById("p1-cards");
 const table = document.getElementById("deck")
 
 const game = new Game(p0, p1, table);
-const dumbBot = new DumbBot(game, 0);
-const dumb2 = new DumbBot(game, 1);//
+const dumbBot = new DumbBot(game, 0, 500);
+const dumb2 = new DumbBot(game, 1, 500);//
 window.game = game;
-while(game.turn % 2 === 0 && game.winner === -1) {
-    dumbBot.action();
-}
+game.turnHandlers.forEach(x => x(game));
 
 // Figure out a way to wait for player input
