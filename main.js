@@ -2,8 +2,20 @@ import {Game} from "./game.js";
 import { DumbBot } from "./bots.js";
 import * as c from "./calculations.js";
 import {winChanceDP} from "./Notes/1-skip.js";
+//import {fs} from "fs"; // Need to get fs though
+
+/*let a = winChanceDP(10, 0);
+const b = {};
+a.forEach((arr, i) => {
+    const x = {};
+    arr.forEach((obj, j) => x[j] = obj);
+    b[i] = x;
+});*/
+
+console.log(JSON.stringify(b));
 
 window.calc = c;
+window.winChance = winChanceDP;
 
 const p0 = document.getElementById("p0-cards");
 //console.log('p0 is:', p0);

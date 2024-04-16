@@ -5,8 +5,13 @@ export function winChanceDP(deckMax, skipMax) {
     
     for (let x = 1; x <= deckMax; x++) {
         for (let y = 0; y <= skipMax; y++) {
+            //console.log(result);//
             if (x === 1) {
                 result[x][y] = y > 0 ? {winRate: 1, move: "skip"} : {winRate: 0, move: "draw"};
+                continue;
+            }
+            if (!result[x-2][y+1] && x !== 2) {
+                result[x][y] = null;
                 continue;
             }
             const draw = x === 2 ? 0.5 : (x-1)/x * (1/(x-1) + (x-2)/(x-1)*result[x-2][y+1].winRate);
