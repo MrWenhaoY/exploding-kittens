@@ -8,9 +8,27 @@ class Bot {
     }
 }
 
+export class NullBot extends Bot {
+    constructor(game, playerId, sleepTime=200) {
+        super(game, playerId);
+        if (sleepTime < 0) {
+            game.turnHandlers.push(() => game.draw(this.playerId));
+        } else {
+            game.turnHandlers.push(() => setTimeout(() => game.draw(this.playerId), sleepTime));
+        }
+    }
+}
+
 export class DumbBot extends Bot{
     constructor(game, playerId, sleepTime=200) {
         super(game, playerId);
+        if (sleepTime < 0) {
+            game.turnHandlers.push(_ => {
+                while (game.turn % 2 === this.playerId && game.winner === -1) this.action();
+            });
+            return;
+        }
+
         const handler = () => {
             if (game.turn % 2 === this.playerId && game.winner === -1) {
                 const turn = game.turn;
