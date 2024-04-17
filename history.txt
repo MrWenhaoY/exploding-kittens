@@ -7,3 +7,7 @@
 4/15/2024
  - Made Notes folder
  - Analysis of no cards played game
+ - Made json file of solution for game with skips and non-playing opponent
+4/16/2024
+- Added move display "both" for when draw and skip result in same winRate
+- Finished analyzing skips with no play opponent

@@ -35,3 +35,49 @@ export function winChanceDP(deckMax, skipMax) {
     return result;
 }
 ```
+
+1 card in deck:
+ - 0 skips = draw and explode
+ - 1+ skips = skip and opponent will draw and explode
+ *Analysis is obvious
+2 cards in deck:
+ - 0 skips = draw and 50% chance of exploding, otherwise opponent draws and explodes
+ - 1 skip = 50%; draw & skip the same. draw: win iff top card is no exploding kitten; skip: win iff top card is exploding kitten
+ - 2+ skips = skip your way to victory
+ *50-50 makes sense
+3 cards in deck:
+ - 0 skips = 1/3 chance to die from draw, 1/3 chance to then win from draw, 1/3 chance to win by skipping on 1 card
+ - 1-2 skips: Drawing and skipping is the same. You just bet on which card you'd be willing to draw when it comes down to it
+ - 3+ skips: skip your way to victory
+ *You will only need to draw once, max
+4 cards in deck:
+ - 0 skips: Draw, 25-25 to win/lose immediately. Otherwise case 2 cards | 1 skip
+ - 1-3 skips: Drawing and skipping is the same. All choices end up with 75% chance of winning 
+ - 4+ skips: skip your way to victory
+ *Chance with no skips is lower because you'll need to draw twice
+5 cards in deck:
+ - 0: Draw, 0.5 * 2/5 + (3|1=2/3) * 3/5 = 3/5
+ - 1: Draw & skip is the same, 3/5
+ - 2-4: Draw & skip is the same, 4/5
+ - 5+: win
+ *Interesting how drawing and skipping comes down to the same thing
+6 cards in deck:
+ - 0: Draw, 0.5 * 1/6 + (4|1=3/4) * 4/6 = 2/3
+ - 1-2: Draw & skip the same, 2/3
+ - 3-5: Draw & skip the same, 5/6
+ - 6+: win
+ * It looks like the chance comes down to how many cards you'll end up drawing
+ * So far up to here it looks like draw and skip don't really matter
+7 cards in deck:
+ - 0: Draw, 4/7 chance of win (draw 3 cards in all since you'll get a skip)
+ - 1-3: 5/7, draw & skip same
+ - 4-6: 6/7, draw & skip same
+8-10 cards in deck:
+- 0: Draw
+- 1+: Draw & skip same, unless you can skip all
+
+Conclusion: It doesn't really matter when you skip, as long as you don't draw more cards than you have to
+ - Aka it doesn't matter whether you skip now or later
+ - (I had confusion when looking at the json file originally because I coded "choose draw if draw is a tie with skip";
+    that wasted some of my time when analyzing)
+ - (And then after that I still had some choices that were not "both" because of rounding errors so I had to go back and fix that)
