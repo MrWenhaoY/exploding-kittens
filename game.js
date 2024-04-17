@@ -1,20 +1,22 @@
 export class Game {
-    constructor(p0Element, p1Element, tableElement) {
+    constructor(p0Element, p1Element, tableElement, render=true, logs=true) {
         this.players = [{}, {}]; //{[card: string]: number}
         this.turn = 0;
         this.deck = [];
         this.discard = []; // discard pile
         this.winner = -1;
         this.turnHandlers = [];
+        this.gameEndHandlers = [];
         this.p0Element = p0Element;
         this.p1Element = p1Element;
         this.tableElement = tableElement;
-
+        this.doRender = render;
+        this.logs = logs;
         // Create deck
         const addCard = (card, num) => {while(num-- > 0) this.deck.push(card);};
         addCard("explode", 1);
         //addCard("defuse", 2);
-        addCard("skip", 4);
+        addCard("skip", 4);//4
         // Shuffle deck
         this.shuffle();
 
@@ -35,7 +37,7 @@ export class Game {
     play(playerId, card) {
         // TODO: Implement Nopes and Defuses
         if (this.turn % 2 == playerId && this.players[playerId][card] > 0 && this.winner === -1) {
-            console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
+            if (this.logs) console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
             if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
             switch(card) {
                 case "skip":
@@ -52,12 +54,12 @@ export class Game {
     draw(playerId) {
         if (this.turn % 2 == playerId && this.winner === -1) {
             const card = this.deck.shift();
-            console.log("Player: " + String(playerId) + " has drawn a card.");
+            if (this.logs) console.log("Player: " + String(playerId) + " has drawn a card.");
             const hand = this.players[playerId];
             card in hand ? hand[card]++ : hand[card] = 1;
             this.render();
             if (card == "explode") {
-                console.log("Player: " + String(playerId) + " has exploded.");
+                if (this.logs) console.log("Player: " + String(playerId) + " has exploded.");
                 this.endGame(1 - playerId);
                 return;
             }
@@ -67,7 +69,7 @@ export class Game {
     }
     endTurn() {
         this.turn++;
-        console.log("It is now Turn " + String(this.turn));
+        if (this.logs) console.log("It is now Turn " + String(this.turn));
         this.turnHandlers.forEach(x => x(this));
         this.render();
     }
@@ -75,8 +77,10 @@ export class Game {
         this.winner = winner;
         this.turnHandlers = [];
         this.render();
+        this.gameEndHandlers.forEach(x => x(this));
     }
     render() {
+        if (!this.doRender) return;
         this.players.forEach((hand, id) => {
             const element = this['p'+String(id)+'Element'];
             element.innerHTML = "";
