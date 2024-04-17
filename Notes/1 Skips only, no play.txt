@@ -81,3 +81,16 @@ Conclusion: It doesn't really matter when you skip, as long as you don't draw mo
  - (I had confusion when looking at the json file originally because I coded "choose draw if draw is a tie with skip";
     that wasted some of my time when analyzing)
  - (And then after that I still had some choices that were not "both" because of rounding errors so I had to go back and fix that)
+
+ Experimental Testing (10000 tries per test)
+ 10 cards: 6001/10000 = 60.01% (pretty much exactly 60%)
+ 9 cards: 6645 (pretty close to 66.67%)
+ 8 cards: 6266 = ~62.50%
+ 7 cards: 5721 = ~57.24%
+ 6 cards: 6619 = ~66.67
+  -- with 100,000 tries per test now --
+ 5 cards: 59855 = ~60%
+ 4 cards: 50215 = ~50%
+ 3 cards: 66756 = ~66.67%
+ 2 cards: 50072 = ~50%
+ 1 cards: 0 = 0%

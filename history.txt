@@ -11,3 +11,5 @@
 4/16/2024
 - Added move display "both" for when draw and skip result in same winRate
 - Finished analyzing skips with no play opponent
+- Did experimental trials for results (which matched the results)
+- Added options for no render and no logging in Game class
