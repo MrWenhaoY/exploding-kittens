@@ -38,9 +38,10 @@ export class DumbBot extends Bot {
     action() {
         if (this.game.turn % 2 !== this.playerId) return; 
         const cards = this.game.players[this.playerId];
-        let handSize = Object.values(cards).reduce((acc, e) => acc + e, 0);
-        if (Math.random() < handSize / (handSize + game.deck.length - 1)) {
+        let handSize = Object.keys(cards).reduce((acc, e) => acc + (e === "defuse" ? 0 : cards[e]), 0);
+        if (Math.random() < handSize / (handSize + this.game.deck.length - 1)) {
             Object.keys(cards).forEach(card => {
+                if (card === "defuse") return;
                 if (Math.random() <= cards[card] / handSize) return this.game.play(this.playerId, card);
                 handSize -= cards[card];
             })

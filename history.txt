@@ -13,3 +13,7 @@
 - Finished analyzing skips with no play opponent
 - Did experimental trials for results (which matched the results)
 - Added options for no render and no logging in Game class
+4/17/2024
+- Made runSim function in main.js
+4/20/2024
+- Added Defuse (that places card randomly)

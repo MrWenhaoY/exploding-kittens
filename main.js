@@ -19,7 +19,7 @@ window.winChance = winChanceDP;
 
 const p0 = document.getElementById("p0-cards");
 const p1 = document.getElementById("p1-cards");
-const table = document.getElementById("deck")
+const table = document.getElementById("table");
 
 
 
@@ -39,6 +39,11 @@ function runSim(bot1, bot2, trials=1000) {
     }
 }
 
+const game = new Game(p0, p1, table);
+const dumbBot = new DumbBot(game, 0, 500);
+//const dumbBot2 = new DumbBot(game, 1, 500);
+window.game = game;
+game.turnHandlers.forEach(x => x(game));
 // Doing 10000 runs of the game with just 9 skips and 1 kitten
 //runSim(10000);
 

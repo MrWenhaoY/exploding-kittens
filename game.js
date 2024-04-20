@@ -21,7 +21,7 @@ export class Game {
         this.shuffle();
 
         // Initialize starting hands
-        // TODO
+        this.players.forEach(hand => hand["defuse"] = 1);
 
         this.render();
     }
@@ -35,14 +35,22 @@ export class Game {
         }
     }
     play(playerId, card) {
-        // TODO: Implement Nopes and Defuses
+        // TODO: Implement Nopes
         if (this.turn % 2 == playerId && this.players[playerId][card] > 0 && this.winner === -1) {
+            if (card === "defuse") {
+                console.log("Defuse may not be played normally.");
+                return;
+            }
             if (this.logs) console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
             if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
             switch(card) {
                 case "skip":
                     this.discard.unshift(card);
                     this.endTurn();
+                    break;
+                case "defuse":
+                    // Defuse may not be played normally
+                    // This statement should never be reached
                     break;
                 default:
                     console.log("Card '" + String(card) + "' not recognized.");
@@ -59,9 +67,21 @@ export class Game {
             card in hand ? hand[card]++ : hand[card] = 1;
             this.render();
             if (card == "explode") {
-                if (this.logs) console.log("Player: " + String(playerId) + " has exploded.");
-                this.endGame(1 - playerId);
-                return;
+                if ("defuse" in hand && hand["defuse"] >= 1) {
+                    // Defuse the kitten
+                    console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
+                    // For now, Defuses put the Kitten randomly back into the deck
+                    this.discard.unshift("defuse");
+                    if (--hand["defuse"] <= 0) delete hand["defuse"];
+                    if (--hand["explode"] <= 0) delete hand["explode"];
+                    this.deck.splice(Math.floor((this.deck.length + 1) * Math.random()), 0, "explode");
+                } else {
+                    if (this.logs) console.log("Player: " + String(playerId) + " has exploded.");
+                    this.endGame(1 - playerId);
+                    return;
+                }
+
+                
             }
             this.endTurn();
             return card;
@@ -95,16 +115,40 @@ export class Game {
         })
         
         const element = this.tableElement;
-        element.innerHTML = "";
-        const deck = document.createElement("img");
+        
+        //element.innerHTML = "";
+        let deck = document.getElementById("deck");
+        if (!deck) {
+            deck = document.createElement("img");
+            deck.classList.add("card");
+            deck.id = "deck";
+            element.appendChild(deck);
+        }
         deck.src = "./Assets/" + (this.deck.length > 0 ? "card-back" : "empty") + ".png";
-        deck.classList.add("card");
-        element.appendChild(deck);
-        element.appendChild(document.createTextNode(this.deck.length));
-        const discard = document.createElement("img");
+        
+        let deckLength = document.getElementById("deckLength");
+        if (!deckLength) {
+            deckLength = document.createElement("span");
+            deckLength.id = "deckLength";
+            element.appendChild(deckLength);
+        }
+        deckLength.textContent = this.deck.length;
+        
+        let discard = document.getElementById("discard");
+        if (!discard) {
+            discard = document.createElement("img");
+            discard.classList.add("card");
+            discard.id = "discard";
+            element.appendChild(discard);
+        }
         discard.src = "./Assets/" + (this.discard.length > 0 ? this.discard[0] : "empty") + ".png";
-        discard.classList.add("card");
-        element.appendChild(discard);
-        element.appendChild(document.createTextNode(this.discard.length));
+
+        let discardLength = document.getElementById("discardLength");
+        if (!discardLength) {
+            discardLength = document.createElement("span");
+            discardLength.id = "discardLength";
+            element.appendChild(deckLength);
+        }
+        discardLength.textContent = this.discard.length;
     }
 }
