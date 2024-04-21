@@ -17,3 +17,5 @@
 - Made runSim function in main.js
 4/20/2024
 - Added Defuse (that places card randomly)
+4/21/2024
+- Analyzed no play opponent (that also doesn't play defuses) where you start with 1 defuse

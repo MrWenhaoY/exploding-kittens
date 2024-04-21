@@ -147,7 +147,7 @@ export class Game {
         if (!discardLength) {
             discardLength = document.createElement("span");
             discardLength.id = "discardLength";
-            element.appendChild(deckLength);
+            element.appendChild(discardLength);
         }
         discardLength.textContent = this.discard.length;
     }

@@ -1,0 +1,16 @@
+Game with only skips and defuses, opponent does not play, not even defuses
+
+
+ - 1 card left: Skip or defuse to win, otherwise boom
+ - There are x cards left, you have y skips in hand and d defuses, opponent never plays any cards:
+     - Draw with d=0: 1/x chance of losing. (x-1)/x * 1/(x-1) chance of winning, (x-1)/x * (x-2)/(x-1) chance of +1 skip -> OPT(x-2, 0, y+1)
+     - Draw with d=1: 1/x chance of defusing. (x-1)/x * 1/(x-1) chance of winning, (x-1)/x * (x-2)/(x-1) chance of +1 skip -> OPT(x-2, 0, y+1)
+     - Skip: -1 skip, 1/x chance of winning, (x-1)/x chance of game continuing -> OPT(x-2, d,  y-1)
+
+Analysis:
+
+Having a defuse is similar to having an extra skip. 
+However, it will only be used when needed, meaning that you don't have to worry about missing out on drawing a resource (skip) when you use your defuse.
+Winrate with x cards in deck, 1 defuse, y skips is similar to winrate with x-1 cards in deck, 0 defuses, and y+1 skips.
+Defuse winrate is higher than that actually and the winrate climbs much higher and a bit steadily, going up to 90%+ even
+With a defuse, drawing is generally better than skipping unless you can skip the rest of your turns away (allowing for an expenditure of defuse as a skip)
