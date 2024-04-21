@@ -16,7 +16,7 @@ export function winChanceDP(deckMax, skipMax) {
             }
             const draw = x === 2 ? 0.5 : (x-1)/x * (1/(x-1) + (x-2)/(x-1)*result[x-2][y+1].winRate);
             const skip = y <= 0 ? -1 : 1/x + (x-1)/x * result[x-1][y-1].winRate;
-            if (Math.max(draw - skip) < 0.00001) {
+            if (Math.abs(draw - skip) < 0.00001) {
                 result[x][y] = {winRate: draw, move: "either"};
                 continue;
             }
