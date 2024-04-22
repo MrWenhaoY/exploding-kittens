@@ -30,6 +30,7 @@ class Bot {
 
 export class NullBot extends Bot {
     action() {
+        //delete this.game.players[this.playerId]["defuse"];
         this.game.draw(this.playerId);
     }
 }

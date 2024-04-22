@@ -1,18 +1,26 @@
 import {Game} from "./game.js";
 import { DumbBot, SkipBot, NullBot } from "./bots.js";
 import * as c from "./calculations.js";
-import {winChanceDP} from "./Notes/1-skip.js";
+import {winChanceDP} from "./Notes/1.2-skip-optimal.js";
 //import {fs} from "fs"; // Need to get fs though
 
-/*let a = winChanceDP(10, 0);
-const b = {};
-a.forEach((arr, i) => {
-    const x = {};
-    arr.forEach((obj, j) => x[j] = obj);
-    b[i] = x;
-});
 
-console.log(JSON.stringify(b));*/
+function modJSON(obj, dim) {
+    // Base case with dim=1
+    if (dim === 1) {
+        for (let key in obj) {
+            obj[key] = JSON.stringify(obj[key]);
+        }
+        return obj;
+    }
+    for (let key in obj) {
+        obj[key] = modJSON(obj[key], dim-1);
+    }
+    return obj;
+}
+
+//console.log(JSON.stringify(modJSON(winChanceDP(10), 3)));
+
 
 window.calc = c;
 window.winChance = winChanceDP;
@@ -41,7 +49,7 @@ function runSim(bot1, bot2, trials=1000) {
 
 const game = new Game(p0, p1, table);
 const dumbBot = new DumbBot(game, 0, 500);
-//const dumbBot2 = new DumbBot(game, 1, 500);
+const dumbBot2 = new DumbBot(game, 1, 500);
 window.game = game;
 game.turnHandlers.forEach(x => x(game));
 // Doing 10000 runs of the game with just 9 skips and 1 kitten

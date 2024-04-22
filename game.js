@@ -21,7 +21,7 @@ export class Game {
         this.shuffle();
 
         // Initialize starting hands
-        this.players.forEach(hand => hand["defuse"] = 1);
+        //this.players.forEach(hand => hand["defuse"] = 1);
 
         this.render();
     }

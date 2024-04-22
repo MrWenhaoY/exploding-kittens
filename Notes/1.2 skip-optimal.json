@@ -1,0 +1,437 @@
+{
+    "1": {
+      "0": {
+        "0": {"winRate":0,"move":"draw"},
+        "1": {"winRate":0,"move":"draw"},
+        "2": {"winRate":0,"move":"draw"},
+        "3": {"winRate":0,"move":"draw"},
+        "4": {"winRate":0,"move":"draw"},
+        "5": {"winRate":0,"move":"draw"},
+        "6": {"winRate":0,"move":"draw"},
+        "7": {"winRate":0,"move":"draw"},
+        "8": {"winRate":0,"move":"draw"},
+        "9": {"winRate":0,"move":"draw"},
+        "10": {"winRate":0,"move":"draw"}
+      },
+      "1": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":0,"move":"skip"},
+        "2": {"winRate":0,"move":"skip"},
+        "3": {"winRate":0,"move":"skip"},
+        "4": {"winRate":0,"move":"skip"},
+        "5": {"winRate":0,"move":"skip"},
+        "6": {"winRate":0,"move":"skip"},
+        "7": {"winRate":0,"move":"skip"},
+        "8": {"winRate":0,"move":"skip"},
+        "9": {"winRate":0,"move":"skip"}
+      },
+      "2": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":0,"move":"skip"},
+        "3": {"winRate":0,"move":"skip"},
+        "4": {"winRate":0,"move":"skip"},
+        "5": {"winRate":0,"move":"skip"},
+        "6": {"winRate":0,"move":"skip"},
+        "7": {"winRate":0,"move":"skip"},
+        "8": {"winRate":0,"move":"skip"}
+      },
+      "3": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":1,"move":"skip"},
+        "3": {"winRate":0,"move":"skip"},
+        "4": {"winRate":0,"move":"skip"},
+        "5": {"winRate":0,"move":"skip"},
+        "6": {"winRate":0,"move":"skip"},
+        "7": {"winRate":0,"move":"skip"}
+      },
+      "4": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":1,"move":"skip"},
+        "3": {"winRate":1,"move":"skip"},
+        "4": {"winRate":0,"move":"skip"},
+        "5": {"winRate":0,"move":"skip"},
+        "6": {"winRate":0,"move":"skip"}
+      },
+      "5": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":1,"move":"skip"},
+        "3": {"winRate":1,"move":"skip"},
+        "4": {"winRate":1,"move":"skip"},
+        "5": {"winRate":0,"move":"skip"}
+      },
+      "6": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":1,"move":"skip"},
+        "3": {"winRate":1,"move":"skip"},
+        "4": {"winRate":1,"move":"skip"}
+      },
+      "7": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":1,"move":"skip"},
+        "3": {"winRate":1,"move":"skip"}
+      },
+      "8": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"},
+        "2": {"winRate":1,"move":"skip"}
+      },
+      "9": {
+        "0": {"winRate":1,"move":"skip"},
+        "1": {"winRate":1,"move":"skip"}
+      },
+      "10": {
+        "0": {"winRate":1,"move":"skip"}
+      }
+    },
+    "2": {
+      "0": {
+        "0": {"winRate":0.5,"move":"draw","skip":-1},
+        "1": {"winRate":0.5,"move":"draw","skip":-1},
+        "2": {"winRate":0,"move":"draw","skip":-1},
+        "3": {"winRate":0,"move":"draw","skip":-1},
+        "4": {"winRate":0,"move":"draw","skip":-1},
+        "5": {"winRate":0,"move":"draw","skip":-1},
+        "6": {"winRate":0,"move":"draw","skip":-1},
+        "7": {"winRate":0,"move":"draw","skip":-1},
+        "8": {"winRate":0,"move":"draw","skip":-1},
+        "9": {"winRate":0,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0,"move":"either"},
+        "4": {"winRate":0,"move":"either"},
+        "5": {"winRate":0,"move":"either"},
+        "6": {"winRate":0,"move":"either"},
+        "7": {"winRate":0,"move":"either"},
+        "8": {"winRate":0,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"},
+        "4": {"winRate":0,"move":"either"},
+        "5": {"winRate":0,"move":"either"},
+        "6": {"winRate":0,"move":"either"},
+        "7": {"winRate":0,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":1,"move":"skip","draw":0.5},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"},
+        "4": {"winRate":0.5,"move":"either"},
+        "5": {"winRate":0,"move":"either"},
+        "6": {"winRate":0,"move":"either"}
+      },
+      "4": {
+        "0": {"winRate":1,"move":"skip","draw":0.5},
+        "1": {"winRate":1,"move":"skip","draw":0.5},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"},
+        "4": {"winRate":0.5,"move":"either"},
+        "5": {"winRate":0.5,"move":"either"}
+      },
+      "5": {
+        "0": {"winRate":1,"move":"skip","draw":0.5},
+        "1": {"winRate":1,"move":"skip","draw":0.5},
+        "2": {"winRate":1,"move":"skip","draw":0.5},
+        "3": {"winRate":0.5,"move":"either"},
+        "4": {"winRate":0.5,"move":"either"}
+      },
+      "6": {
+        "0": {"winRate":1,"move":"skip","draw":0.5},
+        "1": {"winRate":1,"move":"skip","draw":0.5},
+        "2": {"winRate":1,"move":"skip","draw":0.5},
+        "3": {"winRate":1,"move":"skip","draw":0.5}
+      },
+      "7": {
+        "0": {"winRate":1,"move":"skip","draw":0.5},
+        "1": {"winRate":1,"move":"skip","draw":0.5},
+        "2": {"winRate":1,"move":"skip","draw":0.5}
+      },
+      "8": {
+        "0": {"winRate":1,"move":"skip","draw":0.5},
+        "1": {"winRate":1,"move":"skip","draw":0.5}
+      },
+      "9": {
+        "0": {"winRate":1,"move":"skip","draw":0.5}
+      }
+    },
+    "3": {
+      "0": {
+        "0": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+        "1": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+        "2": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+        "3": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+        "4": {"winRate":0,"move":"draw","skip":-1},
+        "5": {"winRate":0,"move":"draw","skip":-1},
+        "6": {"winRate":0,"move":"draw","skip":-1},
+        "7": {"winRate":0,"move":"draw","skip":-1},
+        "8": {"winRate":0,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.6666666666666666,"move":"either"},
+        "1": {"winRate":0.3333333333333333,"move":"either"},
+        "2": {"winRate":0.3333333333333333,"move":"either"},
+        "3": {"winRate":0.3333333333333333,"move":"either"},
+        "4": {"winRate":0.3333333333333333,"move":"either"},
+        "5": {"winRate":0,"move":"either"},
+        "6": {"winRate":0,"move":"either"},
+        "7": {"winRate":0,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.6666666666666666,"move":"either"},
+        "1": {"winRate":0.6666666666666666,"move":"either"},
+        "2": {"winRate":0.3333333333333333,"move":"either"},
+        "3": {"winRate":0.3333333333333333,"move":"either"},
+        "4": {"winRate":0.3333333333333333,"move":"either"},
+        "5": {"winRate":0.3333333333333333,"move":"either"},
+        "6": {"winRate":0,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":0.6666666666666666,"move":"either"},
+        "1": {"winRate":0.6666666666666666,"move":"either"},
+        "2": {"winRate":0.6666666666666666,"move":"either"},
+        "3": {"winRate":0.3333333333333333,"move":"either"},
+        "4": {"winRate":0.3333333333333333,"move":"either"},
+        "5": {"winRate":0.3333333333333333,"move":"either"}
+      },
+      "4": {
+        "0": {"winRate":0.6666666666666666,"move":"either"},
+        "1": {"winRate":0.6666666666666666,"move":"either"},
+        "2": {"winRate":0.6666666666666666,"move":"either"},
+        "3": {"winRate":0.6666666666666666,"move":"either"},
+        "4": {"winRate":0.3333333333333333,"move":"either"}
+      },
+      "5": {
+        "0": {"winRate":1,"move":"skip","draw":0.6666666666666666},
+        "1": {"winRate":0.6666666666666666,"move":"either"},
+        "2": {"winRate":0.6666666666666666,"move":"either"},
+        "3": {"winRate":0.6666666666666666,"move":"either"}
+      },
+      "6": {
+        "0": {"winRate":1,"move":"skip","draw":0.6666666666666666},
+        "1": {"winRate":1,"move":"skip","draw":0.6666666666666666},
+        "2": {"winRate":0.6666666666666666,"move":"either"}
+      },
+      "7": {
+        "0": {"winRate":1,"move":"skip","draw":0.6666666666666666},
+        "1": {"winRate":1,"move":"skip","draw":0.6666666666666666}
+      },
+      "8": {
+        "0": {"winRate":1,"move":"skip","draw":0.6666666666666666}
+      }
+    },
+    "4": {
+      "0": {
+        "0": {"winRate":0.5,"move":"draw","skip":-1},
+        "1": {"winRate":0.5,"move":"draw","skip":-1},
+        "2": {"winRate":0.25,"move":"draw","skip":-1},
+        "3": {"winRate":0.25,"move":"draw","skip":-1},
+        "4": {"winRate":0.25,"move":"draw","skip":-1},
+        "5": {"winRate":0.25,"move":"draw","skip":-1},
+        "6": {"winRate":0,"move":"draw","skip":-1},
+        "7": {"winRate":0,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.25,"move":"either"},
+        "4": {"winRate":0.25,"move":"either"},
+        "5": {"winRate":0.25,"move":"either"},
+        "6": {"winRate":0.25,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"},
+        "4": {"winRate":0.25,"move":"either"},
+        "5": {"winRate":0.25,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":0.75,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"},
+        "4": {"winRate":0.5,"move":"either"}
+      },
+      "4": {
+        "0": {"winRate":0.75,"move":"either"},
+        "1": {"winRate":0.75,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"}
+      },
+      "5": {
+        "0": {"winRate":0.75,"move":"either"},
+        "1": {"winRate":0.75,"move":"either"},
+        "2": {"winRate":0.75,"move":"either"}
+      },
+      "6": {
+        "0": {"winRate":0.75,"move":"either"},
+        "1": {"winRate":0.75,"move":"either"}
+      },
+      "7": {
+        "0": {"winRate":1,"move":"skip","draw":0.75}
+      }
+    },
+    "5": {
+      "0": {
+        "0": {"winRate":0.4,"move":"draw","skip":-1},
+        "1": {"winRate":0.4,"move":"draw","skip":-1},
+        "2": {"winRate":0.4,"move":"draw","skip":-1},
+        "3": {"winRate":0.4,"move":"draw","skip":-1},
+        "4": {"winRate":0.2,"move":"draw","skip":-1},
+        "5": {"winRate":0.2,"move":"draw","skip":-1},
+        "6": {"winRate":0.2,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.6000000000000001,"move":"either"},
+        "1": {"winRate":0.4,"move":"either"},
+        "2": {"winRate":0.4,"move":"either"},
+        "3": {"winRate":0.4,"move":"either"},
+        "4": {"winRate":0.4,"move":"either"},
+        "5": {"winRate":0.2,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.6000000000000001,"move":"either"},
+        "1": {"winRate":0.6000000000000001,"move":"either"},
+        "2": {"winRate":0.4,"move":"either"},
+        "3": {"winRate":0.4,"move":"either"},
+        "4": {"winRate":0.4,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":0.6000000000000001,"move":"either"},
+        "1": {"winRate":0.6000000000000001,"move":"either"},
+        "2": {"winRate":0.6000000000000001,"move":"either"},
+        "3": {"winRate":0.4,"move":"either"}
+      },
+      "4": {
+        "0": {"winRate":0.6000000000000001,"move":"either"},
+        "1": {"winRate":0.6000000000000001,"move":"either"},
+        "2": {"winRate":0.6000000000000001,"move":"either"}
+      },
+      "5": {
+        "0": {"winRate":0.8,"move":"either"},
+        "1": {"winRate":0.6000000000000001,"move":"either"}
+      },
+      "6": {
+        "0": {"winRate":0.8,"move":"either"}
+      }
+    },
+    "6": {
+      "0": {
+        "0": {"winRate":0.5,"move":"draw","skip":-1},
+        "1": {"winRate":0.5,"move":"draw","skip":-1},
+        "2": {"winRate":0.33333333333333326,"move":"draw","skip":-1},
+        "3": {"winRate":0.33333333333333326,"move":"draw","skip":-1},
+        "4": {"winRate":0.33333333333333326,"move":"draw","skip":-1},
+        "5": {"winRate":0.33333333333333326,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.33333333333333326,"move":"either"},
+        "4": {"winRate":0.33333333333333326,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"},
+        "3": {"winRate":0.5,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":0.6666666666666667,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"}
+      },
+      "4": {
+        "0": {"winRate":0.6666666666666667,"move":"either"},
+        "1": {"winRate":0.6666666666666667,"move":"either"}
+      },
+      "5": {
+        "0": {"winRate":0.6666666666666667,"move":"either"}
+      }
+    },
+    "7": {
+      "0": {
+        "0": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+        "1": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+        "2": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+        "3": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+        "4": {"winRate":0.28571428571428564,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5714285714285715,"move":"either"},
+        "1": {"winRate":0.42857142857142855,"move":"either"},
+        "2": {"winRate":0.42857142857142855,"move":"either"},
+        "3": {"winRate":0.42857142857142855,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.5714285714285715,"move":"either"},
+        "1": {"winRate":0.5714285714285715,"move":"either"},
+        "2": {"winRate":0.42857142857142855,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":0.5714285714285715,"move":"either"},
+        "1": {"winRate":0.5714285714285715,"move":"either"}
+      },
+      "4": {
+        "0": {"winRate":0.5714285714285715,"move":"either"}
+      }
+    },
+    "8": {
+      "0": {
+        "0": {"winRate":0.5,"move":"draw","skip":-1},
+        "1": {"winRate":0.5,"move":"draw","skip":-1},
+        "2": {"winRate":0.37499999999999994,"move":"draw","skip":-1},
+        "3": {"winRate":0.37499999999999994,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"},
+        "2": {"winRate":0.5,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.5,"move":"either"},
+        "1": {"winRate":0.5,"move":"either"}
+      },
+      "3": {
+        "0": {"winRate":0.6250000000000001,"move":"either"}
+      }
+    },
+    "9": {
+      "0": {
+        "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+        "1": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+        "2": {"winRate":0.4444444444444444,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5555555555555556,"move":"either"},
+        "1": {"winRate":0.4444444444444444,"move":"either"}
+      },
+      "2": {
+        "0": {"winRate":0.5555555555555556,"move":"either"}
+      }
+    },
+    "10": {
+      "0": {
+        "0": {"winRate":0.5,"move":"draw","skip":-1},
+        "1": {"winRate":0.5,"move":"draw","skip":-1}
+      },
+      "1": {
+        "0": {"winRate":0.5,"move":"either"}
+      }
+    }
+  }

@@ -1,27 +1,33 @@
-export function winChanceDP(deckMax) {
-    skipMax += deckMax - 1;
-    const result = [];     // [deck][skip]
-    for (let i = 0; i <= deckMax; i++) result.push(Array(skipMax + 1));
+export function winChanceDP(n) {
+    const result = {};     // {deck : yourSkip : oppSkip}
     
-    for (let x = 1; x <= deckMax; x++) {
-        for (let y = 0; y <= skipMax; y++) {
-            //console.log(result);//
-            if (x === 1) {
-                result[x][y] = y > 0 ? {winRate: 1, move: "skip"} : {winRate: 0, move: "draw"};
-                continue;
+    for (let x = 1; x <= n; x++) {
+        result[x] = {};
+        for (let sum = 0; sum <= n-x+1; sum++) {
+            for (let y = 0; y <= sum; y++) {
+                //console.log(result);
+                if (!result[x][y]) result[x][y] = {};
+                const z = sum - y;
+                if (x == 1) {
+                    result[x][y][z] = y > 0 ? {winRate: y > z ? 1 : 0, move: "skip"} : {winRate: 0, move: "draw"};
+                    continue;
+                }
+
+                if (!result[x-1][z][y+1]) {
+                    result[x][y][z] = null;
+                    continue;
+                }
+
+                const draw = (x-1)/x * (1 - result[x-1][z][y+1].winRate);
+                const skip = y <= 0 ? -1 : (1 - result[x][z][y-1].winRate);
+                if (Math.abs(draw - skip) < 0.00001) {
+                    result[x][y][z] = {winRate: draw, move: "either"};
+                } else {
+                    result[x][y][z] = draw > skip ? {winRate: draw, move: "draw", skip} : {winRate: skip, move: "skip", draw};
+                }
             }
-            if (!result[x-2][y+1] && x !== 2) {
-                result[x][y] = null;
-                continue;
-            }
-            const draw = x === 2 ? 0.5 : (x-1)/x * (1/(x-1) + (x-2)/(x-1)*result[x-2][y+1].winRate);
-            const skip = y <= 0 ? -1 : 1/x + (x-1)/x * result[x-1][y-1].winRate;
-            if (Math.max(draw - skip) < 0.00001) {
-                result[x][y] = {winRate: draw, move: "either"};
-                continue;
-            }
-            result[x][y] = draw >= skip ? {winRate: draw, move: "draw"} : {winRate: skip, move: "skip"}
         }
     }
+
     return result;
 }
