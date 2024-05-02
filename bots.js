@@ -53,8 +53,25 @@ export class DumbBot extends Bot {
 
 export class SkipBot extends Bot {
     action() {
+        if (this.game.turn % 2 !== this.playerId) return; 
         const cards = this.game.players[this.playerId];
         if (cards["skip"]) return this.game.play(this.playerId, "skip");
+        else return this.game.draw(this.playerId);
+    }
+}
+
+export class DrawBot extends SkipBot {
+    action() {
+        if (this.game.turn % 2 !== this.playerId) return; 
+        const selfCards = this.game.players[this.playerId];
+        //if (!selfCards["defuse"]) return super.action();
+        const enemyCards = this.game.players[1 - this.playerId];
+        const deckSize = this.game.deck.length;
+        // Assumes game with only skips and starting defuses
+        // Looks at opponent's hand because I'm too lazy to calculate it but this is calculatable (given above assumption)
+        if (selfCards["skips"] && Object.keys(selfCards).reduce((acc, e) => acc + selfCards[e], 0) 
+        - Object.keys(enemyCards).reduce((acc, e) => acc + selfCards[e], 0) > (2 * deckSize - 2))
+        return this.game.play(this.playerId, "skip");
         else return this.game.draw(this.playerId);
     }
 }

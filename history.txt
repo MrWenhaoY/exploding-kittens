@@ -23,3 +23,4 @@
 - Added Beard Cat, Cattermelon, Tacocat images
 5/2/2024
 - Analyzed skip only game under optimal play, but players start with 1 defuse each
+- Update Game constructor for more settings options

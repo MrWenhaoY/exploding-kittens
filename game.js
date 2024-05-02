@@ -1,5 +1,33 @@
 export class Game {
-    constructor(p0Element, p1Element, tableElement, render=true, logs=true) {
+    constructor(p0Element, p1Element, tableElement, options={}) {
+        const settings = {
+            render: true,
+            logs: true,
+            deck: {
+                "skip": 4,
+                "explode": 1
+                // "defuse": 2
+            },
+            hand: {
+                "defuse": 1,
+                "draw": 0
+            }
+        };
+
+        // Applies options to settings, modifying settings
+        function applyDefaults(set, opt) {
+            for (let key of Object.keys(options)) {
+                if (typeof opt[key] !== typeof set[key]) throw new Error(`Options "${key}" should be of type ${typeof set[key]} but is instead ${typeof opt[key]}`);
+                if (typeof set[key] === "object") {
+                    applyDefaults(set[key], opt[key]);
+                } else {
+                    set[key] = opt[key];
+                }
+            }
+        }
+
+        applyDefaults(settings, options);
+
         this.players = [{}, {}]; //{[card: string]: number}
         this.turn = 0;
         this.deck = [];
@@ -10,18 +38,30 @@ export class Game {
         this.p0Element = p0Element;
         this.p1Element = p1Element;
         this.tableElement = tableElement;
-        this.doRender = render;
-        this.logs = logs;
+        this.doRender = settings.render;
+        this.logs = settings.logs;
+
         // Create deck
         const addCard = (card, num) => {while(num-- > 0) this.deck.push(card);};
-        addCard("explode", 1);
-        //addCard("defuse", 2);
-        addCard("skip", 4);//4
+        for (let [card, qty] of Object.entries(settings["deck"])) {
+            if (card === "explode") continue;
+            addCard(card, qty);
+        }
         // Shuffle deck
         this.shuffle();
 
         // Initialize starting hands
-        //this.players.forEach(hand => hand["defuse"] = 1);
+        this.players.forEach(hand => {
+            hand["defuse"] = settings.hand["defuse"];
+            for (let i = 0; i < settings.hand["draw"]; i++) {
+                const card = this.deck.unshift();
+                card in hand ? hand[card]++ : hand[card] = 1;
+            }
+        });
+
+        // Add exploding kittens
+        addCard("explode", settings.deck["explode"]);
+        this.shuffle();
 
         this.render();
     }
@@ -69,7 +109,7 @@ export class Game {
             if (card == "explode") {
                 if ("defuse" in hand && hand["defuse"] >= 1) {
                     // Defuse the kitten
-                    console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
+                    //console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
                     // For now, Defuses put the Kitten randomly back into the deck
                     this.discard.unshift("defuse");
                     if (--hand["defuse"] <= 0) delete hand["defuse"];

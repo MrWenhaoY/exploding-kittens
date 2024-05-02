@@ -1,5 +1,5 @@
 import {Game} from "./game.js";
-import { DumbBot, SkipBot, NullBot } from "./bots.js";
+import { DumbBot, SkipBot, NullBot, DrawBot } from "./bots.js";
 import * as c from "./calculations.js";
 import {results, getResult} from "./Notes/1.3-skip-optimal+defuse.js";
 //import {fs} from "fs"; // Need to get fs though
@@ -36,7 +36,7 @@ function runSim(bot1, bot2, trials=1000) {
     const records = [];
     window.records = records;
     for (let i = 0; i < trials; i++) {
-        const game = new Game(p0, p1, table, false, false);
+        const game = new Game(p0, p1, table, {render: false, logs: false});
         const dumbBot = new bot1(game, 0, -1);
         const dumb2 = new bot2(game, 1, -1);//
         window.game = game;
@@ -49,12 +49,12 @@ function runSim(bot1, bot2, trials=1000) {
 }
 
 const game = new Game(p0, p1, table);
-const dumbBot = new DumbBot(game, 0, 500);
-const dumbBot2 = new DumbBot(game, 1, 500);
+const bot1 = new DrawBot(game, 0, 1000);
+const bot2 = new SkipBot(game, 1, 1000);
 window.game = game;
 game.turnHandlers.forEach(x => x(game));
-// Doing 10000 runs of the game with just 9 skips and 1 kitten
-//runSim(SkipBot, DumbBot, 100000);
+
+//runSim(DrawBot, SkipBot, 100000);
 
 
 // Figure out a way to wait for player input
