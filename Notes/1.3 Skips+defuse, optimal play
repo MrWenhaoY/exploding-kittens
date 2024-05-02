@@ -1,0 +1,23 @@
+Game with only skips, opponent plays optimally. 1 defuse per player but none in deck
+
+In this case, your opponent has the same strategy as you
+Assumes 1 exploding kitten, only skips in deck and skips + defuse in hand
+
+Select Data: Winrates for player 1 starting with x cards in deck:
+1. 0
+2. 0.625
+3. 0.28703703703703703
+4. 0.5972222222222223
+5. 0.3515555555555555
+6. 0.582037037037037
+7. 0.3819663103336573
+8. 0.57202947845805
+9. 0.4002497130539458
+10. 0.5647752582514489 
+
+Conclusions:
+ - Drawing is a lot better than skipping now (unless you can skip all your turns away) since you can just defuse in the unlikely case you draw a kitten
+ - With 1 card left you have to have more defuses and skips than your opponent to be able to winRate
+ - With odd # of cards going first is bad (since you have to win, not just tie if it gets to the last card standoff)
+ - With even # of cards going first is good (first move advantage; you're likely to have 1 more card than opponent)
+ - The win rate values converge towards 50% as the number of cards in the deck increase

@@ -1,0 +1,1586 @@
+{
+  "1": {
+    "0": {
+      "0": {
+        "1": {
+          "1": {"winRate":0,"move":"draw"}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        }
+      },
+      "6": {
+        "0": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw"},
+          "1": {"winRate":0,"move":"draw"}
+        }
+      }
+    },
+    "1": {
+      "1": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "6": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "1": {"winRate":0,"move":"skip"}
+        }
+      }
+    },
+    "2": {
+      "1": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "6": {
+        "0": {
+          "1": {"winRate":0,"move":"skip"}
+        }
+      }
+    },
+    "3": {
+      "1": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      }
+    },
+    "4": {
+      "1": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"skip"},
+          "1": {"winRate":0,"move":"skip"}
+        },
+        "1": {
+          "1": {"winRate":0,"move":"skip"}
+        }
+      }
+    },
+    "5": {
+      "1": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":1,"move":"skip"}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"skip"},
+          "1": {"winRate":1,"move":"skip"}
+        }
+      },
+      "4": {
+        "1": {
+          "0": {"winRate":1,"move":"skip"}
+        }
+      }
+    },
+    "6": {
+      "1": {
+        "1": {
+          "0": {"winRate":1,"move":"skip"}
+        }
+      }
+    }
+  },
+  "2": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.5,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":-1},
+          "1": {"winRate":0.625,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":-1},
+          "1": {"winRate":0.625,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      },
+      "6": {
+        "0": {
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0,"move":"either"}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0,"move":"either"}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "1": {"winRate":0,"move":"either"}
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "0": {
+          "0": {"winRate":1,"move":"skip","draw":0.5},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":1,"move":"either"}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "5": {
+        "0": {
+          "1": {"winRate":0,"move":"either"}
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "0": {
+          "0": {"winRate":1,"move":"skip","draw":0.5},
+          "1": {"winRate":1,"move":"skip","draw":0.5}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":1,"move":"either"}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":1,"move":"skip","draw":0.5},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":1,"move":"either"}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.5,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5},
+          "1": {"winRate":0.625,"move":"draw","skip":0.375}
+        }
+      }
+    },
+    "5": {
+      "0": {
+        "0": {
+          "0": {"winRate":1,"move":"skip","draw":0.5},
+          "1": {"winRate":1,"move":"skip","draw":0.5}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":1,"move":"either"}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":1,"move":"skip","draw":0.5}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":1,"move":"either"}
+        }
+      },
+      "2": {
+        "1": {
+          "0": {"winRate":1,"move":"either"}
+        }
+      }
+    }
+  },
+  "3": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":-1},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":-1}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":-1}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      },
+      "5": {
+        "0": {
+          "0": {"winRate":0,"move":"draw","skip":-1},
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        },
+        "1": {
+          "1": {"winRate":0,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":0.33333333333333337},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":0.33333333333333337},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":0.33333333333333337},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "5": {
+        "0": {
+          "1": {"winRate":0,"move":"either"}
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.6666666666666666,"move":"draw","skip":0.5555555555555556}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":0.33333333333333337},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":0.33333333333333337},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.6666666666666666,"move":"draw","skip":0.5555555555555556}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.6666666666666666,"move":"draw","skip":0.5555555555555556}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.3333333333333333,"move":"either"},
+          "1": {"winRate":0.16666666666666666,"move":"draw","skip":0.11111111111111116}
+        },
+        "1": {
+          "1": {"winRate":0.28703703703703703,"move":"draw","skip":0.14814814814814814}
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.6666666666666666,"move":"draw","skip":0.5555555555555556}
+        },
+        "1": {
+          "0": {"winRate":1,"move":"either"},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"},
+          "1": {"winRate":0.6666666666666666,"move":"draw","skip":0.5555555555555556}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.6666666666666666,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334},
+          "1": {"winRate":0.8518518518518519,"move":"draw","skip":0.712962962962963}
+        }
+      },
+      "3": {
+        "1": {
+          "0": {"winRate":0.8888888888888888,"move":"draw","skip":0.8333333333333334}
+        }
+      }
+    },
+    "5": {
+      "0": {
+        "1": {
+          "0": {"winRate":1,"move":"either"}
+        }
+      }
+    }
+  },
+  "4": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":-1},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":-1},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.25,"move":"draw","skip":-1},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":-1},
+          "1": {"winRate":0.1267361111111111,"move":"draw","skip":-1}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.25,"move":"draw","skip":-1},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.3125,"move":"draw","skip":-1},
+          "1": {"winRate":0.1267361111111111,"move":"draw","skip":-1}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.25,"move":"draw","skip":-1},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.3125,"move":"draw","skip":-1},
+          "1": {"winRate":0.1267361111111111,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":0.0625}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.25,"move":"either"},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":0.0625}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.1267361111111111,"move":"draw","skip":0.078125}
+        }
+      },
+      "4": {
+        "0": {
+          "0": {"winRate":0.25,"move":"either"},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":0.0625}
+        },
+        "1": {
+          "1": {"winRate":0.1267361111111111,"move":"draw","skip":0.078125}
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.9375,"move":"draw","skip":0.9166666666666666},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":0.0625}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "4": {
+        "0": {
+          "1": {"winRate":0.08333333333333337,"move":"draw","skip":0.0625}
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.75,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.9375,"move":"draw","skip":0.9166666666666666},
+          "1": {"winRate":0.921875,"move":"draw","skip":0.8732638888888888}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.9375,"move":"draw","skip":0.9166666666666666},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.4166666666666667,"move":"draw","skip":0.25}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.75,"move":"draw","skip":0.5833333333333333},
+          "1": {"winRate":0.5972222222222223,"move":"draw","skip":0.4027777777777777}
+        }
+      }
+    },
+    "4": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.75,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.9375,"move":"draw","skip":0.9166666666666666},
+          "1": {"winRate":0.921875,"move":"draw","skip":0.8732638888888888}
+        }
+      },
+      "1": {
+        "1": {
+          "0": {"winRate":0.9375,"move":"draw","skip":0.9166666666666666}
+        }
+      }
+    }
+  },
+  "5": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.4,"move":"draw","skip":-1},
+          "1": {"winRate":0.2,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":-1},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.4,"move":"draw","skip":-1},
+          "1": {"winRate":0.2,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.5466666666666666,"move":"draw","skip":-1},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.4,"move":"draw","skip":-1},
+          "1": {"winRate":0.2,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.5466666666666666,"move":"draw","skip":-1},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":-1}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.4,"move":"draw","skip":-1},
+          "1": {"winRate":0.05,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.5466666666666666,"move":"draw","skip":-1},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":-1}
+        }
+      },
+      "4": {
+        "0": {
+          "1": {"winRate":0.05,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6000000000000001,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.7892777777777777,"move":"draw","skip":0.6484444444444445}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.4,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":0.21072222222222226}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.4,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "0": {"winRate":0.5466666666666666,"move":"draw","skip":0.44999999999999996},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":0.21072222222222226}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.4,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "0": {"winRate":0.5466666666666666,"move":"draw","skip":0.44999999999999996},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":0.21072222222222226}
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6000000000000001,"move":"either"},
+          "1": {"winRate":0.55,"move":"draw","skip":0.45333333333333337}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.7892777777777777,"move":"draw","skip":0.6484444444444445}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.6000000000000001,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.7892777777777777,"move":"draw","skip":0.6484444444444445}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.4,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":0.21072222222222226}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.4,"move":"either"},
+          "1": {"winRate":0.2,"move":"draw","skip":0.1466666666666666}
+        },
+        "1": {
+          "1": {"winRate":0.3515555555555555,"move":"draw","skip":0.21072222222222226}
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.6000000000000001,"move":"either"},
+          "1": {"winRate":0.55,"move":"draw","skip":0.45333333333333337}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.7892777777777777,"move":"draw","skip":0.6484444444444445}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.6000000000000001,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8},
+          "1": {"winRate":0.7892777777777777,"move":"draw","skip":0.6484444444444445}
+        }
+      },
+      "2": {
+        "1": {
+          "0": {"winRate":0.8533333333333334,"move":"draw","skip":0.8}
+        }
+      }
+    }
+  },
+  "6": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.3777777777777778,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":-1},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.12222222222222218,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":-1},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.33333333333333326,"move":"draw","skip":-1},
+          "1": {"winRate":0.12222222222222218,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":-1},
+          "1": {"winRate":0.1918055555555556,"move":"draw","skip":-1}
+        }
+      },
+      "3": {
+        "0": {
+          "0": {"winRate":0.33333333333333326,"move":"draw","skip":-1},
+          "1": {"winRate":0.12222222222222218,"move":"draw","skip":-1}
+        },
+        "1": {
+          "1": {"winRate":0.1918055555555556,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.3777777777777778,"move":"draw","skip":0.2499999999999999}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6222222222222222},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":0.417962962962963}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.3777777777777778,"move":"draw","skip":0.2499999999999999}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6222222222222222},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":0.417962962962963}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.12222222222222218,"move":"draw","skip":0.09722222222222221}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6222222222222222},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":0.417962962962963}
+        }
+      },
+      "3": {
+        "0": {
+          "1": {"winRate":0.12222222222222218,"move":"draw","skip":0.09722222222222221}
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.3777777777777778,"move":"draw","skip":0.2499999999999999}
+        },
+        "1": {
+          "0": {"winRate":0.9027777777777778,"move":"draw","skip":0.8777777777777778},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":0.417962962962963}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.3777777777777778,"move":"draw","skip":0.2499999999999999}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6222222222222222},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":0.417962962962963}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6222222222222222},
+          "1": {"winRate":0.582037037037037,"move":"draw","skip":0.417962962962963}
+        }
+      }
+    },
+    "3": {
+      "0": {
+        "1": {
+          "0": {"winRate":0.9027777777777778,"move":"draw","skip":0.8777777777777778}
+        }
+      }
+    }
+  },
+  "7": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+          "1": {"winRate":0.2142857142857142,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.8340136054421768,"move":"draw","skip":-1},
+          "1": {"winRate":0.3819663103336573,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+          "1": {"winRate":0.2142857142857142,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.5945578231292517,"move":"draw","skip":-1},
+          "1": {"winRate":0.3819663103336573,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.42857142857142855,"move":"draw","skip":-1},
+          "1": {"winRate":0.2142857142857142,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.5945578231292517,"move":"draw","skip":-1},
+          "1": {"winRate":0.3819663103336573,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5714285714285715,"move":"either"},
+          "1": {"winRate":0.2142857142857142,"move":"draw","skip":0.16598639455782316}
+        },
+        "1": {
+          "0": {"winRate":0.8340136054421768,"move":"draw","skip":0.7857142857142858},
+          "1": {"winRate":0.7506584062196306,"move":"draw","skip":0.6180336896663428}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.42857142857142855,"move":"either"},
+          "1": {"winRate":0.2142857142857142,"move":"draw","skip":0.16598639455782316}
+        },
+        "1": {
+          "0": {"winRate":0.8340136054421768,"move":"draw","skip":0.7857142857142858},
+          "1": {"winRate":0.3819663103336573,"move":"draw","skip":0.24934159378036935}
+        }
+      },
+      "2": {
+        "0": {
+          "0": {"winRate":0.42857142857142855,"move":"either"},
+          "1": {"winRate":0.2142857142857142,"move":"draw","skip":0.16598639455782316}
+        },
+        "1": {
+          "1": {"winRate":0.3819663103336573,"move":"draw","skip":0.24934159378036935}
+        }
+      }
+    },
+    "2": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5714285714285715,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.8340136054421768,"move":"draw","skip":0.7857142857142858},
+          "1": {"winRate":0.7506584062196306,"move":"draw","skip":0.6180336896663428}
+        }
+      },
+      "1": {
+        "1": {
+          "0": {"winRate":0.8340136054421768,"move":"draw","skip":0.7857142857142858}
+        }
+      }
+    }
+  },
+  "8": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.35476190476190483,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":-1},
+          "1": {"winRate":0.57202947845805,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1},
+          "1": {"winRate":0.14523809523809528,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":-1},
+          "1": {"winRate":0.57202947845805,"move":"draw","skip":-1}
+        }
+      },
+      "2": {
+        "0": {
+          "1": {"winRate":0.14523809523809528,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"},
+          "1": {"winRate":0.35476190476190483,"move":"draw","skip":0.2499999999999999}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6452380952380952},
+          "1": {"winRate":0.57202947845805,"move":"draw","skip":0.42797052154195003}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.5,"move":"either"}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000001,"move":"draw","skip":0.6452380952380952},
+          "1": {"winRate":0.57202947845805,"move":"draw","skip":0.42797052154195003}
+        }
+      }
+    }
+  },
+  "9": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+          "1": {"winRate":0.2222222222222221,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.8215167548500881,"move":"draw","skip":-1},
+          "1": {"winRate":0.4002497130539458,"move":"draw","skip":-1}
+        }
+      },
+      "1": {
+        "0": {
+          "0": {"winRate":0.4444444444444444,"move":"draw","skip":-1},
+          "1": {"winRate":0.2222222222222221,"move":"draw","skip":-1}
+        },
+        "1": {
+          "1": {"winRate":0.4002497130539458,"move":"draw","skip":-1}
+        }
+      }
+    },
+    "1": {
+      "0": {
+        "1": {
+          "0": {"winRate":0.8215167548500881,"move":"draw","skip":0.7777777777777779}
+        }
+      }
+    }
+  },
+  "10": {
+    "0": {
+      "0": {
+        "0": {
+          "0": {"winRate":0.5,"move":"draw","skip":-1}
+        },
+        "1": {
+          "0": {"winRate":0.7500000000000002,"move":"draw","skip":-1},
+          "1": {"winRate":0.5647752582514489,"move":"draw","skip":-1}
+        }
+      }
+    }
+  }
+}

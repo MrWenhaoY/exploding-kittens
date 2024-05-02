@@ -1,11 +1,11 @@
 import {Game} from "./game.js";
 import { DumbBot, SkipBot, NullBot } from "./bots.js";
 import * as c from "./calculations.js";
-import {winChanceDP} from "./Notes/1.2-skip-optimal.js";
+import {results, getResult} from "./Notes/1.3-skip-optimal+defuse.js";
 //import {fs} from "fs"; // Need to get fs though
 
-
-function modJSON(obj, dim) {
+// WARNING: Modifies input!!!
+window.modJSON = function modJSON(obj, dim) {
     // Base case with dim=1
     if (dim === 1) {
         for (let key in obj) {
@@ -23,7 +23,8 @@ function modJSON(obj, dim) {
 
 
 window.calc = c;
-window.winChance = winChanceDP;
+window.getResults = getResult;
+window.results = results;
 
 const p0 = document.getElementById("p0-cards");
 const p1 = document.getElementById("p1-cards");
@@ -53,7 +54,7 @@ const dumbBot2 = new DumbBot(game, 1, 500);
 window.game = game;
 game.turnHandlers.forEach(x => x(game));
 // Doing 10000 runs of the game with just 9 skips and 1 kitten
-//runSim(10000);
+//runSim(SkipBot, DumbBot, 100000);
 
 
 // Figure out a way to wait for player input
