@@ -1,5 +1,5 @@
 import {Game} from "./game.js";
-import { DumbBot, SkipBot, NullBot, DrawBot } from "./bots.js";
+import * as Bots from "./bots.js";
 import * as c from "./calculations.js";
 import {results, getResult} from "./Notes/1.3-skip-optimal+defuse.js";
 //import {fs} from "fs"; // Need to get fs though
@@ -32,11 +32,11 @@ const table = document.getElementById("table");
 
 
 
-function runSim(bot1, bot2, trials=1000) {
+function runSim(bot1, bot2, trials=1000, deck={}) {
     const records = [];
     window.records = records;
     for (let i = 0; i < trials; i++) {
-        const game = new Game(p0, p1, table, {render: false, logs: false});
+        const game = new Game(p0, p1, table, {render: false, logs: false, deck});
         const dumbBot = new bot1(game, 0, -1);
         const dumb2 = new bot2(game, 1, -1);//
         window.game = game;
@@ -47,14 +47,14 @@ function runSim(bot1, bot2, trials=1000) {
         game.turnHandlers.forEach(x => x(game));
     }
 }
-
+/*
 const game = new Game(p0, p1, table);
-const bot1 = new DrawBot(game, 0, 1000);
-const bot2 = new SkipBot(game, 1, 1000);
+const bot1 = new SkipBot(game, 0, 1000);
+const bot2 = new DrawBot(game, 1, 1000);
 window.game = game;
-game.turnHandlers.forEach(x => x(game));
+game.turnHandlers.forEach(x => x(game));*/
 
-//runSim(DrawBot, SkipBot, 100000);
+runSim(Bots.DPBot, Bots.DPBot, 100000, {skip: 5});
 
 
 // Figure out a way to wait for player input

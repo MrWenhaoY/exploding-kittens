@@ -16,7 +16,7 @@ export class Game {
 
         // Applies options to settings, modifying settings
         function applyDefaults(set, opt) {
-            for (let key of Object.keys(options)) {
+            for (let key of Object.keys(opt)) {
                 if (typeof opt[key] !== typeof set[key]) throw new Error(`Options "${key}" should be of type ${typeof set[key]} but is instead ${typeof opt[key]}`);
                 if (typeof set[key] === "object") {
                     applyDefaults(set[key], opt[key]);
@@ -27,6 +27,8 @@ export class Game {
         }
 
         applyDefaults(settings, options);
+
+        //console.log(settings);//
 
         this.players = [{}, {}]; //{[card: string]: number}
         this.turn = 0;
@@ -109,7 +111,7 @@ export class Game {
             if (card == "explode") {
                 if ("defuse" in hand && hand["defuse"] >= 1) {
                     // Defuse the kitten
-                    //console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
+                    if (this.logs) console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
                     // For now, Defuses put the Kitten randomly back into the deck
                     this.discard.unshift("defuse");
                     if (--hand["defuse"] <= 0) delete hand["defuse"];

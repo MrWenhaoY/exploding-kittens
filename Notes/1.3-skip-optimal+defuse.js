@@ -26,6 +26,6 @@ export function getResult(deckSize, yourSkip, oppSkip, yourDefuse, oppDefuse) {
             }
         }
     }
-    console.log(deckSize, yourSkip, oppSkip, yourDefuse, oppDefuse, curr[oppDefuse]);
+    //console.log(deckSize, yourSkip, oppSkip, yourDefuse, oppDefuse, curr[oppDefuse]);
     return curr[oppDefuse];
 }

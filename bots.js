@@ -1,3 +1,5 @@
+import { getResult } from "./Notes/1.3-skip-optimal+defuse.js";
+
 class Bot {
     constructor(game, playerId, sleepTime=200) {
         this.game = game;
@@ -68,10 +70,30 @@ export class DrawBot extends SkipBot {
         const enemyCards = this.game.players[1 - this.playerId];
         const deckSize = this.game.deck.length;
         // Assumes game with only skips and starting defuses
-        // Looks at opponent's hand because I'm too lazy to calculate it but this is calculatable (given above assumption)
+        
         if (selfCards["skips"] && Object.keys(selfCards).reduce((acc, e) => acc + selfCards[e], 0) 
-        - Object.keys(enemyCards).reduce((acc, e) => acc + selfCards[e], 0) > (2 * deckSize - 2))
+        - Object.keys(enemyCards).reduce((acc, e) => acc + enemyCards[e], 0) > (2 * deckSize - 2))
         return this.game.play(this.playerId, "skip");
         else return this.game.draw(this.playerId);
+    }
+}
+
+export class DPBot extends Bot {
+    action() {
+        // Assumes game with only skips and starting defuses
+        // Looks at opponent's hand because I'm too lazy to calculate it but this is calculatable (given above assumption)
+        if (this.game.turn % 2 !== this.playerId) return; 
+        const selfHand = this.game.players[this.playerId];
+        const oppHand = this.game.players[1 - this.playerId];
+        const r = getResult(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0);
+        if (r.move === "either" || r.move === "draw") return this.game.draw(this.playerId);
+        else {
+            if (!selfHand.skip) {
+                console.log(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0)
+                console.log(selfHand, r);
+                throw new Error("Tried to play skip with no skip in hand!");
+            }
+            return this.game.play(this.playerId, "skip");
+        }
     }
 }
