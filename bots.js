@@ -14,9 +14,9 @@ class Bot {
 
         const handler = () => {
             if (game.turn % 2 === this.playerId && game.winner === -1) {
-                const turn = game.turn;
+                const turn = game.turnCount;
                 this.action();
-                if (game.turn === turn && game.winner === -1) setTimeout(handler, sleepTime);
+                if (game.turnCount === turn && game.winner === -1) setTimeout(handler, sleepTime);
             }
         }
         game.turnHandlers.push(_ => {

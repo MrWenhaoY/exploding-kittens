@@ -134,7 +134,7 @@ export class Game {
         }
     }
     endTurn() {
-        this.turn++;
+        this.turn = 1 - this.turn;
         this.turnCount++;
         if (this.logs) console.log("It is now Turn " + String(this.turn));
         this.turnHandlers.forEach(x => x(this));
