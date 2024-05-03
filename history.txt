@@ -27,3 +27,6 @@
 - Add DrawBot
 - Add DPBot (DrawBot was not optimal for the targeted variation)
 - Added Rainbow Ralphing Cat, Hairy Potato Cat images
+- Update Game class to separate turn and turnCount
+- Improve game display
+- Add turn display

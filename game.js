@@ -197,5 +197,9 @@ export class Game {
             element.appendChild(discardLength);
         }
         discardLength.textContent = this.discard.length;
+
+        // This should always exist
+        const turnNum = document.getElementById("turn");
+        turnNum.textContent = this.turn;
     }
 }
