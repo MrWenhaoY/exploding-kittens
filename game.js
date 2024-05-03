@@ -198,8 +198,10 @@ export class Game {
         }
         discardLength.textContent = this.discard.length;
 
-        // This should always exist
+        // These should always exist
         const turnNum = document.getElementById("turn");
         turnNum.textContent = this.turn;
+        const turnArrow = document.getElementById("turn-direction");
+        turnArrow.src = "./Assets/" + "p" + this.turn + "-turn-arrow" + ".png";
     }
 }
