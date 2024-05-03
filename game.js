@@ -32,8 +32,10 @@ export class Game {
 
         this.players = [{}, {}]; //{[card: string]: number}
         this.turn = 0;
+        this.turnCount = 0;
         this.deck = [];
         this.discard = []; // discard pile
+        this.discardCounts = {};
         this.winner = -1;
         this.turnHandlers = [];
         this.gameEndHandlers = [];
@@ -88,6 +90,7 @@ export class Game {
             switch(card) {
                 case "skip":
                     this.discard.unshift(card);
+                    (card in this.discardCounts) ? this.discardCounts[card]++ : this.discardCounts[card] = 1;
                     this.endTurn();
                     break;
                 case "defuse":
@@ -114,6 +117,7 @@ export class Game {
                     if (this.logs) console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
                     // For now, Defuses put the Kitten randomly back into the deck
                     this.discard.unshift("defuse");
+                    ("defuse" in this.discardCounts) ? this.discardCounts["defuse"]++ : this.discardCounts["defuse"] = 1;
                     if (--hand["defuse"] <= 0) delete hand["defuse"];
                     if (--hand["explode"] <= 0) delete hand["explode"];
                     this.deck.splice(Math.floor((this.deck.length + 1) * Math.random()), 0, "explode");
@@ -131,6 +135,7 @@ export class Game {
     }
     endTurn() {
         this.turn++;
+        this.turnCount++;
         if (this.logs) console.log("It is now Turn " + String(this.turn));
         this.turnHandlers.forEach(x => x(this));
         this.render();
