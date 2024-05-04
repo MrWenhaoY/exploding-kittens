@@ -1,3 +1,5 @@
+import { objAdd } from "./utility.js";
+
 export class Game {
     constructor(p0Element, p1Element, tableElement, options={}) {
         const settings = {
@@ -59,8 +61,8 @@ export class Game {
         this.players.forEach(hand => {
             hand["defuse"] = settings.hand["defuse"];
             for (let i = 0; i < settings.hand["draw"]; i++) {
-                const card = this.deck.unshift();
-                card in hand ? hand[card]++ : hand[card] = 1;
+                const card = this.deck.shift();
+                objAdd(hand, card);
             }
         });
 
@@ -92,7 +94,7 @@ export class Game {
             switch(card) {
                 case "skip":
                     this.discard.unshift(card);
-                    (card in this.discardCounts) ? this.discardCounts[card]++ : this.discardCounts[card] = 1;
+                    objAdd(this.discardCounts, card);
                     this.endTurn();
                     break;
                 case "defuse":
@@ -111,7 +113,7 @@ export class Game {
             const card = this.deck.shift();
             if (this.settings.logs) console.log("Player: " + String(playerId) + " has drawn a card.");
             const hand = this.players[playerId];
-            card in hand ? hand[card]++ : hand[card] = 1;
+            objAdd(hand, card);
             this.handlers.draw.forEach(f => f(playerId, card === "explode"));
             this.render();
             if (card == "explode") {
@@ -120,7 +122,7 @@ export class Game {
                     if (this.settings.logs) console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
                     // For now, Defuses put the Kitten randomly back into the deck
                     this.discard.unshift("defuse");
-                    ("defuse" in this.discardCounts) ? this.discardCounts["defuse"]++ : this.discardCounts["defuse"] = 1;
+                    objAdd(this.discardCounts, "defuse");
                     if (--hand["defuse"] <= 0) delete hand["defuse"];
                     if (--hand["explode"] <= 0) delete hand["explode"];
                     this.handlers.play.forEach(f => f(playerId, "defuse", this));
