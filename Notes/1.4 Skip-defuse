@@ -26,4 +26,5 @@ Conclusions:
  - With even # of cards going first is good (first move advantage; you're likely to have 1 more card than opponent)
  - We now have to calculate probabilities of opponent's hand based on draw and play histories. With low card counts, this is still feasible
    (even if not terribly efficient)
- - The algorithm is *noticably* slower: 100000 simulations of this bot takes a couple seconds ~15 whereas before it took almost no time (<0.5)
+ - The algorithm is noticably slower: 100000 simulations of this bot ~5-10 seconds longer than bots before DP_13.
+   An update I made to the Game class did make everything a bit slower though
