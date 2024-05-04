@@ -3,6 +3,7 @@ import * as Bots from "./bots.js";
 import * as c from "./calculations.js";
 import {results, getResult} from "./Notes/1.4-skip-defuse.js";
 import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js";
+import { DP_14Bot } from "./Notes/1.4-skip-defuse.js";
 //import {fs} from "fs"; // Need to get fs though
 
 // WARNING: Modifies input!!!
@@ -50,8 +51,8 @@ function runSim(bot1, bot2, trials=1000, deck={}) {
 }
 
 const game = new Game(p0, p1, table);
-const bot1 = new Bots.DumbBot(game, 0, 700);
-const bot2 = new DP_13Bot(game, 1, 700);
+const bot1 = new Bots.DumbBot(game, 0, 600);
+const bot2 = new DP_14Bot(game, 1, 600);
 window.game = game;
 game.handlers.turn.forEach(x => x(game));
 

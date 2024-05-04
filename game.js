@@ -7,8 +7,8 @@ export class Game {
             logs: true,
             deck: {
                 "skip": 4,
-                "explode": 1
-                // "defuse": 2
+                "explode": 1,
+                "defuse": 2
             },
             hand: {
                 "defuse": 1,
@@ -143,7 +143,7 @@ export class Game {
     endTurn() {
         this.turn = 1 - this.turn;
         this.turnCount++;
-        if (this.settings.logs) console.log("It is now Turn " + String(this.turn));
+        if (this.settings.logs) console.log("It is now Turn " + String(this.turnCount) + ", which is player " + String(this.turn) + "'s turn.");
         // To let the render happen first
         setTimeout(() => this.handlers.turn.forEach(x => x(this.turn, this)), 0);
         this.render();
