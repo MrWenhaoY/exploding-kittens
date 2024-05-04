@@ -135,7 +135,8 @@ export class Game {
 
                 
             }
-            this.endTurn();
+            // To let the return happen first
+            setTimeout(() => this.endTurn(), 0);
             return card;
         }
     }
@@ -143,12 +144,13 @@ export class Game {
         this.turn = 1 - this.turn;
         this.turnCount++;
         if (this.settings.logs) console.log("It is now Turn " + String(this.turn));
-        this.handlers.turn.forEach(x => x(this.turn, this));
+        // To let the render happen first
+        setTimeout(() => this.handlers.turn.forEach(x => x(this.turn, this)), 0);
         this.render();
     }
     endGame(winner) {
         this.winner = winner;
-        this.turnHandlers = [];
+        this.handlers.turn = []; // Just in case
         this.render();
         this.handlers.end.forEach(x => x(this));
     }
