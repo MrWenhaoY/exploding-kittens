@@ -36,3 +36,10 @@
 - Write utility function objAdd
 - Create objSum utility function
 - Worked on analyzing skips + defuse in deck (1.4). Didn't completely finish debugging though
+5/4/2024
+- I have discovered the source of my pain. So apparently, when you log an object in the console,
+  it shows the condensed version of the object's properties correctly (as in, the values at that time),
+  but when you expand the object, it loads and caches the current properties of that object.
+- Made deepCopy utility function to deal with that issue
+- Fixed(?) issue with 14_DP algorithm
+- Did some experimental analysis of the algorithm, got some puzzling results

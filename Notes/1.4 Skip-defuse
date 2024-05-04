@@ -1,0 +1,29 @@
+Game with only skips, opponent plays optimally. 1 defuse per player and some in deck
+
+Assumes 1 exploding kitten
+
+WE WILL NOT BE TRYING TO READ THE OPPONENT!
+
+When making a choice, we will have to calculate probabilities of opponent's hands and cards in deck
+to find the choice with the best expected value.
+
+
+Select Data: Expected winrates for first player starting with x skips and 2 defuses in deck:
+0 0.28703703703703703
+1 0.6315104166666667
+2 0.33697942386831276
+3 0.6174965920781893
+4 0.3621466981907401 | 0.22461 loss (experimental against self) | 0.22292 loss (ex. vs dumbBot) | 0.29591 win (dumbBot vs this)
+5 0.6080744381212582
+6 0.37758930432015575
+7 0.6010294871469818
+
+Conclusions:
+ - With defuses in the deck, the difference between winRates for odd vs even converges slower, although they still converge
+ - Drawing is a lot better than skipping now (unless you can skip all your turns away) since you can just defuse in the unlikely case you draw a kitten
+ - With 1 card left you have to have more defuses and skips than your opponent to be able to winRate
+ - With odd # of cards going first is bad (since you have to win, not just tie if it gets to the last card standoff)
+ - With even # of cards going first is good (first move advantage; you're likely to have 1 more card than opponent)
+ - We now have to calculate probabilities of opponent's hand based on draw and play histories. With low card counts, this is still feasible
+   (even if not terribly efficient)
+ - The algorithm is *noticably* slower: 100000 simulations of this bot takes a couple seconds ~15 whereas before it took almost no time (<0.5)
