@@ -1,3 +1,5 @@
+import { Bot } from "./../bots.js";
+
 export const results = {};
 
 export function getResult(deckSize, yourSkip, oppSkip, yourDefuse, oppDefuse) {
@@ -28,4 +30,24 @@ export function getResult(deckSize, yourSkip, oppSkip, yourDefuse, oppDefuse) {
     }
     //console.log(deckSize, yourSkip, oppSkip, yourDefuse, oppDefuse, curr[oppDefuse]);
     return curr[oppDefuse];
+}
+
+export class DP_13Bot extends Bot {
+    action() {
+        // Assumes game with only skips and starting defuses
+        // Looks at opponent's hand because I'm too lazy to calculate it but this is calculatable (given above assumption)
+        if (this.game.turn % 2 !== this.playerId) return; 
+        const selfHand = this.game.players[this.playerId];
+        const oppHand = this.game.players[1 - this.playerId];
+        const r = getResult(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0);
+        if (r.move === "either" || r.move === "draw") return this.game.draw(this.playerId);
+        else {
+            if (!selfHand.skip) {
+                console.log(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0)
+                console.log(selfHand, r);
+                throw new Error("Tried to play skip with no skip in hand!");
+            }
+            return this.game.play(this.playerId, "skip");
+        }
+    }
 }

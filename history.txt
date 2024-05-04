@@ -31,3 +31,5 @@
 - Improve game display
 - Add turn display
 - Much pain through CSS but revamped game display again and added turn arrow
+5/3/2024
+- Rewrote handlers (turn, end, draw, play) code in Game class for greater flexibility and functionality

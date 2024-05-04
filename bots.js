@@ -1,29 +1,34 @@
-import { getResult } from "./Notes/1.3-skip-optimal+defuse.js";
-
-class Bot {
-    constructor(game, playerId, sleepTime=200) {
+export class Bot {
+    constructor(game, playerId, sleepTime=200, handlers={draw: [], play: []}) {
+        if (typeof handlers !== "object" || !(Array.isArray(handlers.draw)) || !(Array.isArray(handlers.play))) {
+            throw new Error("Type of handler input invalid!");
+        }
+        
         this.game = game;
         this.playerId = playerId;
 
+        // Turn Handler for automatic playing
         if (sleepTime < 0) {
-            game.turnHandlers.push(_ => {
+            game.handlers.turn.push(_ => {
                 while (game.turn % 2 === this.playerId && game.winner === -1) this.action();
             });
-            return;
+        } else {
+            const handler = () => {
+                if (game.turn % 2 === this.playerId && game.winner === -1) {
+                    const turn = game.turnCount;
+                    this.action();
+                    if (game.turnCount === turn && game.winner === -1) setTimeout(handler, sleepTime);
+                }
+            }
+            game.handlers.turn.push(_ => {
+                if (game.turn % 2 === this.playerId && game.winner === -1) {
+                    setTimeout(handler, sleepTime)
+                }
+            });
         }
 
-        const handler = () => {
-            if (game.turn % 2 === this.playerId && game.winner === -1) {
-                const turn = game.turnCount;
-                this.action();
-                if (game.turnCount === turn && game.winner === -1) setTimeout(handler, sleepTime);
-            }
-        }
-        game.turnHandlers.push(_ => {
-            if (game.turn % 2 === this.playerId && game.winner === -1) {
-                setTimeout(handler, sleepTime)
-            }
-        });
+        handlers.draw.forEach(x => game.handlers.draw.push(x));
+        handlers.play.forEach(x => game.handlers.play.push(x));
     }
     action() {
         if (this.game.turn % 2 !== this.playerId) return;
@@ -77,15 +82,15 @@ export class DrawBot extends SkipBot {
         else return this.game.draw(this.playerId);
     }
 }
-
-export class DPBot extends Bot {
+/*
+export class DP_13Bot extends Bot {
     action() {
         // Assumes game with only skips and starting defuses
         // Looks at opponent's hand because I'm too lazy to calculate it but this is calculatable (given above assumption)
         if (this.game.turn % 2 !== this.playerId) return; 
         const selfHand = this.game.players[this.playerId];
         const oppHand = this.game.players[1 - this.playerId];
-        const r = getResult(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0);
+        const r = DP_13(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0);
         if (r.move === "either" || r.move === "draw") return this.game.draw(this.playerId);
         else {
             if (!selfHand.skip) {
@@ -96,4 +101,4 @@ export class DPBot extends Bot {
             return this.game.play(this.playerId, "skip");
         }
     }
-}
+}*/

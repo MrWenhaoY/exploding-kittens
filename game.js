@@ -28,8 +28,7 @@ export class Game {
 
         applyDefaults(settings, options);
 
-        //console.log(settings);//
-
+        this.settings = settings;
         this.players = [{}, {}]; //{[card: string]: number}
         this.turn = 0;
         this.turnCount = 0;
@@ -37,13 +36,15 @@ export class Game {
         this.discard = []; // discard pile
         this.discardCounts = {};
         this.winner = -1;
-        this.turnHandlers = [];
-        this.gameEndHandlers = [];
+        this.handlers = {
+            draw: [],
+            play: [],
+            turn: [],
+            end: []
+        }
         this.p0Element = p0Element;
         this.p1Element = p1Element;
         this.tableElement = tableElement;
-        this.doRender = settings.render;
-        this.logs = settings.logs;
 
         // Create deck
         const addCard = (card, num) => {while(num-- > 0) this.deck.push(card);};
@@ -63,7 +64,7 @@ export class Game {
             }
         });
 
-        // Add exploding kittens
+        // Add exploding kitten(s)
         addCard("explode", settings.deck["explode"]);
         this.shuffle();
 
@@ -85,8 +86,9 @@ export class Game {
                 console.log("Defuse may not be played normally.");
                 return;
             }
-            if (this.logs) console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
+            if (this.settings.logs) console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
             if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
+            this.handlers.play.forEach(f => f(playerId, card, this));
             switch(card) {
                 case "skip":
                     this.discard.unshift(card);
@@ -98,7 +100,7 @@ export class Game {
                     // This statement should never be reached
                     break;
                 default:
-                    console.log("Card '" + String(card) + "' not recognized.");
+                    console.warn("Card '" + String(card) + "' not recognized.");
                     return;
             }
             
@@ -107,22 +109,24 @@ export class Game {
     draw(playerId) {
         if (this.turn % 2 == playerId && this.winner === -1) {
             const card = this.deck.shift();
-            if (this.logs) console.log("Player: " + String(playerId) + " has drawn a card.");
+            if (this.settings.logs) console.log("Player: " + String(playerId) + " has drawn a card.");
             const hand = this.players[playerId];
             card in hand ? hand[card]++ : hand[card] = 1;
+            this.handlers.draw.forEach(f => f(playerId, card === "explode"));
             this.render();
             if (card == "explode") {
                 if ("defuse" in hand && hand["defuse"] >= 1) {
                     // Defuse the kitten
-                    if (this.logs) console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
+                    if (this.settings.logs) console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
                     // For now, Defuses put the Kitten randomly back into the deck
                     this.discard.unshift("defuse");
                     ("defuse" in this.discardCounts) ? this.discardCounts["defuse"]++ : this.discardCounts["defuse"] = 1;
                     if (--hand["defuse"] <= 0) delete hand["defuse"];
                     if (--hand["explode"] <= 0) delete hand["explode"];
+                    this.handlers.play.forEach(f => f(playerId, "defuse", this));
                     this.deck.splice(Math.floor((this.deck.length + 1) * Math.random()), 0, "explode");
                 } else {
-                    if (this.logs) console.log("Player: " + String(playerId) + " has exploded.");
+                    if (this.settings.logs) console.log("Player: " + String(playerId) + " has exploded.");
                     this.endGame(1 - playerId);
                     return;
                 }
@@ -136,18 +140,18 @@ export class Game {
     endTurn() {
         this.turn = 1 - this.turn;
         this.turnCount++;
-        if (this.logs) console.log("It is now Turn " + String(this.turn));
-        this.turnHandlers.forEach(x => x(this));
+        if (this.settings.logs) console.log("It is now Turn " + String(this.turn));
+        this.handlers.turn.forEach(x => x(this.turn, this));
         this.render();
     }
     endGame(winner) {
         this.winner = winner;
         this.turnHandlers = [];
         this.render();
-        this.gameEndHandlers.forEach(x => x(this));
+        this.handlers.end.forEach(x => x(this));
     }
     render() {
-        if (!this.doRender) return;
+        if (!this.settings.render) return;
         this.players.forEach((hand, id) => {
             const element = this['p'+String(id)+'Element'];
             element.innerHTML = "";
