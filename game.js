@@ -136,7 +136,8 @@ export class Game {
                 
             }
             // To let the return happen first
-            setTimeout(() => this.endTurn(), 0);
+            //setTimeout(() => this.endTurn(), 0);
+            this.endTurn();
             return card;
         }
     }
