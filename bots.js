@@ -9,9 +9,7 @@ export class Bot {
 
         // Turn Handler for automatic playing
         if (sleepTime < 0) {
-            game.handlers.turn.push(_ => {
-                while (game.turn % 2 === this.playerId && game.winner === -1) this.action();
-            });
+            game.handlers.turn.push( () => {while(game.turn === this.playerId && game.winner === -1) this.action()});
         } else {
             const handler = () => {
                 if (game.turn % 2 === this.playerId && game.winner === -1) {
@@ -37,7 +35,6 @@ export class Bot {
 
 export class NullBot extends Bot {
     action() {
-        //delete this.game.players[this.playerId]["defuse"];
         this.game.draw(this.playerId);
     }
 }

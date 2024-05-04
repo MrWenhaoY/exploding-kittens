@@ -12,10 +12,10 @@ Select Data: Expected winrates for first player starting with x skips and 2 defu
 0 0.28703703703703703
 1 0.6315104166666667
 2 0.33697942386831276
-3 0.6174965920781893
-4 0.3621466981907401 | 0.22461 loss (experimental against self) | 0.22292 loss (ex. vs dumbBot) | 0.29591 win (dumbBot vs this)
-5 0.6080744381212582
-6 0.37758930432015575
+3 0.6174965920781893 | 0.61910 win (experimental against self)
+4 0.3621466981907401 | 0.36192 win (experimental against self) | 0.48346 win (ex. vs dumbBot) | 0.73831 win (as 2nd player against DumbBot) 0.63983 (as 2nd player against DP_13)
+5 0.6080744381212582 | 0.60917 win (experimental against self)
+6 0.37758930432015575 | 0.37635 win (experimental against self)
 7 0.6010294871469818
 
 Conclusions:

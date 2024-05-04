@@ -43,3 +43,5 @@
 - Made deepCopy utility function to deal with that issue
 - Fixed(?) issue with 14_DP algorithm
 - Did some experimental analysis of the algorithm, got some puzzling results
+- Turns out I had broken running a game with no-delay bots, and that caused problems with simulation. Fixed now.
+- Fixed 14_DP analysis
