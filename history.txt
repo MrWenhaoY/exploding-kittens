@@ -50,3 +50,7 @@
 - Create DP for winRate given a game state in a game with attacks, skips, and defuses
 - Create bot for game with attacks
 - Analyze game with attacks, skips, defuses
+- Update README.md to include game rule explanation, definition of optimality, and thought process behind DP_20
+5/5/2024
+- Worked on GUI
+  - Add option to hide hands

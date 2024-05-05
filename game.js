@@ -14,7 +14,9 @@ export class Game {
             hand: {
                 "defuse": 1,
                 "draw": 0
-            }
+            },
+            hide0: false,
+            hide1: false
         };
 
         // Applies options to settings, modifying settings
@@ -161,6 +163,9 @@ export class Game {
     endGame(winner) {
         this.winner = winner;
         this.handlers.turn = []; // Just in case
+        // No need to hide now that the game's over
+        this.settings.hide0 = false;
+        this.settings.hide1 = false;
         this.render();
         this.handlers.end.forEach(x => x(this));
     }
@@ -172,7 +177,7 @@ export class Game {
             Object.keys(hand).forEach(name => {
                 for (let i = 0; i < hand[name]; i++) {
                     const card = document.createElement("img");
-                    card.src = "./Assets/" + name + ".png";
+                    card.src = "./Assets/" + (this.settings["hide" + String(id)] && name !== "explode" ? "card-back": name) + ".png";
                     card.classList.add("card");
                     element.appendChild(card);
                 }
