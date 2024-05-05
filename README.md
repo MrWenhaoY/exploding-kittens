@@ -70,7 +70,7 @@ although their exploitative powers may possibly have potential to be improved.
 <!--*It is possible that for algorithms after `DP_20Bot` not reading or attempted reading
 may be a known shortcoming *-->
 
-## Algorithm Design
+## Algorithm Overview
 
 Here, we will discuss the latest algorithm `DP_20Bot`. This algorithm is created for a game with only
 **Skips**, **Attacks**, and **Defuses** in the deck (plus 1 **Exploding Kitten**).
@@ -142,3 +142,50 @@ When it is the algorithm's turn, the algorithm calculates the expected value of 
 summing the product of the possibility of each game state and the expected win rate of the action
 in that game state.
 The algorithm then picks the action with the highest expected value and chooses that action.
+
+> ### Runtime
+> Since the algorithm effectively searches the game tree (for each possibility!), the runtime
+> of the algorithm turns out to be exponential.
+> 
+> Consider a game with *n* cards in deck and *k* types of cards (excluding the **Exploding Kitten**,
+> of which there is known to be exactly 1).
+> 
+> The dynamic programming portion of the algorithm takes in 1 parameter for # of cards in deck,
+> 2 parameters for each type of card (# of that type in each player's hand),
+> 1 parameter for each type of card - 1 (# of that type left in deck; last type can be calculated from the rest),
+> and 1 additional parameter for # of turns in a row because of the **Attack** card.
+> 
+> Thus, the dynamic programming "array" (here the algorithm uses objects, but in a similar manner as arrays for DP)
+> would have $1 + 2k + k - 1 + 1 = 3k + 1$ parameters, assuming that one of the card types is an **Attack**.
+> 
+> Assuming each player starts with 1 (or any constant number) **Defuse** in hand, 
+> the maximum value of each parameter is $O(n)$ throughout the game.
+> Assuming object access to be $O(1)$, computing a single game state value in the object is $O(1)$.
+> There are $3k + 1$ parameters, each of which range from 0 or 1 to $O(n)$, so $O(n^{3k+1})$ values
+> are computed in all for dynamic programming.
+> 
+> A deeper analysis, can be done however. Assuming that there are at most some fixed number of each type of card,
+> which not unreasonable, a tighter upper bound can be established. In the actual *Exploding Kittens*,
+> there are at most 5 of each type of card in the deck (in the base set, at least), and each player starts with 1
+> **Defuse** in hand. Then, each of the $3k - 1$ parameters go from 0 to 5 (even for **Defuse** because only 2 start
+> in the deck). The number of cards in the deck would be at most $n \leq 5k+1$, and number of consecutive turns is
+> known to be either 0 or 1. Thus, there are actually only at most $5^{3k-1} \cdot (5k+1) \cdot 2 \approx k5^{3k}$ values in the
+> dynamic programming array (object).
+>
+> Although both analyses yield exponential values, the runtime is still tolerable small values of $n$ and $k$, like the ones
+> used for the current algorithm `DP_20`.
+> 
+> `DP_20` also tracks each possible game state and their associated probabilities throughout the game. The start state of the game
+> is known and fixed, so at the beginning there is only 1 possible game state. However, each time the opponent draws a card,
+> there are at most $k$ different types of cards they could have drawn (ignoring the **Exploding Kitten** because that is revealed
+> and evident). Thus, the number of possible game states increases by at most a factor of $k$ each time a card is drawn.
+> A loose upper bound would thus be $O(n^k)$ game states, although that is not entirely accurate because the number of game states
+> decreases as cards are drawn by the algorithm or played in general and information is gained; at the end of the game, with 1 card
+> left in the deck (should the game have not ended earlier), the number of possible game states has collapsed back into 1 as the
+> contents of the deck and the opponent's hand are entirely known and certain.
+> 
+> Nevertheless, the number of tracked possibilities is still exponential throughout the game, although for the low values of $n$ and $k$
+> used here, the runtime is still tolerable.
+> 
+> However, this does mean that new algorithms created with the current method that work with more types of cards will have
+> exponentially greater runtime.
