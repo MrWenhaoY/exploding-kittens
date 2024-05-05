@@ -23,8 +23,6 @@ window.modJSON = function modJSON(obj, dim) {
 
 //console.log(JSON.stringify(modJSON(winChanceDP(10), 3)));
 
-
-window.calc = c;
 window.getResult = getResult;
 window.results = results;
 window.Game = Game;
@@ -54,9 +52,8 @@ function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
 window.runSim = runSim;
 
 const game = new Game(p0, p1, table, {hide0: true, hide1: false});
-const bot1 = new DP_20Bot(game, 0, 600);
-new Bots.User(game, 1)
-//const bot2 = new DP_20Bot(game, 1, 600);
+const bot1 = new Bots.User(game, 0, 600);
+const bot2 = new Bots.User(game, 1, 600);
 window.game = game;
 game.handlers.turn.forEach(x => x(game));
 
