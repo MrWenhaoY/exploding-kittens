@@ -7,6 +7,7 @@ export class Game {
             logs: true,
             deck: {
                 "skip": 4,
+                "attack": 4,
                 "explode": 1,
                 "defuse": 2
             },
@@ -33,6 +34,7 @@ export class Game {
         this.settings = settings;
         this.players = [{}, {}]; //{[card: string]: number}
         this.turn = 0;
+        this.stackedTurns = 0;
         this.turnCount = 0;
         this.deck = [];
         this.discard = []; // discard pile
@@ -82,19 +84,25 @@ export class Game {
         }
     }
     play(playerId, card) {
-        // TODO: Implement Nopes
         if (this.turn % 2 == playerId && this.players[playerId][card] > 0 && this.winner === -1) {
             if (card === "defuse") {
                 console.log("Defuse may not be played normally.");
                 return;
             }
-            if (this.settings.logs) console.log("Player: " + String(playerId) + " is playing " + String(card) + ".");
+            if (this.settings.logs) console.log("Player " + String(playerId) + " is playing " + String(card) + ".");
             if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
             this.handlers.play.forEach(f => f(playerId, card, this));
             switch(card) {
                 case "skip":
                     this.discard.unshift(card);
                     objAdd(this.discardCounts, card);
+                    this.endTurn();
+                    break;
+                case "attack":
+                    this.discard.unshift(card);
+                    objAdd(this.discardCounts, card);
+                    this.turn = 1 - this.turn;
+                    this.stackedTurns = 2;
                     this.endTurn();
                     break;
                 case "defuse":
@@ -142,7 +150,8 @@ export class Game {
         }
     }
     endTurn() {
-        this.turn = 1 - this.turn;
+        if (this.stackedTurns > 0) this.stackedTurns--;
+        else this.turn = 1 - this.turn;
         this.turnCount++;
         if (this.settings.logs) console.log("It is now Turn " + String(this.turnCount) + ", which is player " + String(this.turn) + "'s turn.");
         // To let the render happen first
