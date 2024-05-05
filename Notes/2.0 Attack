@@ -1,0 +1,33 @@
+Game with skips, attacks, and defuses. Opponent plays optimally.
+
+Assumes 1 exploding kitten
+
+WE WILL NOT BE TRYING TO READ THE OPPONENT!
+We assume that the opponent does not try to read us by our moves
+
+When making a choice, we will have to calculate probabilities of opponent's hands and cards in deck
+to find the choice with the best expected value.
+
+
+Select Data: 
+With 4 skips, 2 defuses, 3 attacks:
+ - Expected optimal winrate: 0.5950722285652231
+ - Experimental Winrate as P1 against self: 0.59388
+ - Experimental Winrate as P1 against DumbBot: 0.74966
+With 4 skips, 2 defuses, 4 attacks:
+ - Expected optimal winrate as P1: 0.4852302630119859
+ - Experimental Winrate as P1 against self: 0.48447
+ - Experimental Winrate as P1 against DumbBot: 0.72367
+ - Experimental Winrate as P1 against DP_14: 0.71826
+ - Experimental Winrate as P2 against DumbBot: 0.72839
+
+Conclusions:
+ - With defuses in the deck, the difference between winRates for odd vs even converges slower, although they still converge
+ - Drawing is a lot better than skipping now (unless you can skip all your turns away) since you can just defuse in the unlikely case you draw a kitten
+ - With 1 card left you have to have more defuses and skips than your opponent to be able to winRate
+ - With odd # of cards going first is bad (since you have to win, not just tie if it gets to the last card standoff)
+ - With even # of cards going first is good (first move advantage; you're likely to have 1 more card than opponent)
+ - We now have to calculate probabilities of opponent's hand based on draw and play histories. With low card counts, this is still feasible
+   (even if not terribly efficient)
+ - The algorithm is noticably slower: 100000 simulations of this bot ~5-10 seconds longer than bots before DP_13.
+   An update I made to the Game class did make everything a bit slower though

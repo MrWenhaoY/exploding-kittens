@@ -48,3 +48,5 @@
 - Add Attack img
 - Implement Attack card
 - Create DP for winRate given a game state in a game with attacks, skips, and defuses
+- Create bot for game with attacks
+- Analyze game with attacks, skips, defuses
