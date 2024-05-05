@@ -3,7 +3,7 @@ import * as Bots from "./bots.js";
 import * as c from "./calculations.js";
 import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js";
 import { DP_14Bot } from "./Notes/1.4-skip-defuse.js";
-import {results, getResult} from "./Notes/2-attack.js"
+import {results, getResult} from "./Notes/2.0-attack.js"
 //import {fs} from "fs"; // Need to get fs though
 
 // WARNING: Modifies input!!!

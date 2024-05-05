@@ -59,9 +59,9 @@ export function getResult(deckSize, yourSkip, oppSkip, yourAttack, oppAttack, yo
     return curr[turns];
 }
 
-/*
+
 // There are defuses and the deck and we may not always know for certain what cards are in the opponent's hand
-export class DP_14Bot extends Bot {
+export class DP_20Bot extends Bot {
     constructor(game, playerId, sleepTime=200) {        
         function compDeck(d1, d2) {
             const k1 = Object.keys(d1);
@@ -177,4 +177,4 @@ export class DP_14Bot extends Bot {
             return this.game.play(this.playerId, "skip");
         }
     }
-}*/
+}
