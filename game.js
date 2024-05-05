@@ -1,7 +1,7 @@
 import { objAdd } from "./utility.js";
 
 export class Game {
-    constructor(p0Element, p1Element, tableElement, options={}) {
+    constructor(p0Element, p1Element, tableElement, notify, options={}) {
         const settings = {
             render: true,
             logs: true,
@@ -52,6 +52,7 @@ export class Game {
         this.p0Element = p0Element;
         this.p1Element = p1Element;
         this.tableElement = tableElement;
+        this.notify = notify;
 
         // Create deck
         const addCard = (card, num) => {while(num-- > 0) this.deck.push(card);};
@@ -93,6 +94,7 @@ export class Game {
                 return false;
             }
             if (this.settings.logs) console.log("Player " + String(playerId) + " is playing " + String(card) + ".");
+            if (this.settings.render) this.notify("Player " + String(playerId) + " played " + String(card), playerId);
             if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
             this.handlers.play.forEach(f => f(playerId, card, this));
             switch(card) {
@@ -131,6 +133,7 @@ export class Game {
                 if ("defuse" in hand && hand["defuse"] >= 1) {
                     // Defuse the kitten
                     if (this.settings.logs) console.log("Player: " + String(playerId) + " has drawn an Exploding Kitten but defused it.");
+                    if (this.settings.render) this.notify("⚠️ Player " + String(playerId) + " drew an Exploding Kitten but defused it! ⚠️", playerId);
                     // For now, Defuses put the Kitten randomly back into the deck
                     this.discard.unshift("defuse");
                     objAdd(this.discardCounts, "defuse");
@@ -140,11 +143,12 @@ export class Game {
                     this.deck.splice(Math.floor((this.deck.length + 1) * Math.random()), 0, "explode");
                 } else {
                     if (this.settings.logs) console.log("Player: " + String(playerId) + " has exploded.");
+                    if (this.settings.render) this.notify("💣 Player " + String(playerId) + " has exploded! 💣", playerId);
                     this.endGame(1 - playerId);
                     return;
                 }
-
-                
+            } else {
+                if (this.settings.render) this.notify("Player " + String(playerId) + " drew a card", playerId);
             }
             // To let the return happen first
             //setTimeout(() => this.endTurn(), 0);

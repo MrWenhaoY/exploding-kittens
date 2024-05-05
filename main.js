@@ -1,6 +1,5 @@
 import {Game} from "./game.js";
 import * as Bots from "./bots.js";
-import * as c from "./calculations.js";
 import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js";
 import { DP_14Bot } from "./Notes/1.4-skip-defuse.js";
 import {results, getResult, DP_20Bot} from "./Notes/2.0-attack.js"
@@ -31,14 +30,24 @@ window.Bots = Bots;
 const p0 = document.getElementById("p0-cards");
 const p1 = document.getElementById("p1-cards");
 const table = document.getElementById("table");
+const messageDisplay = document.getElementById("notifications");
 
-
+const mkNotifs = (limit) => {
+    let quantity = 0;
+    return (text, pid) => {
+        if (++quantity > limit) messageDisplay.removeChild(messageDisplay.lastElementChild);
+        const msg = document.createElement("div");
+        msg.className = "notif" + String(pid);
+        msg.textContent = text;
+        messageDisplay.prepend(msg);
+    };
+}
 
 function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
     const records = [];
     window.records = records;
     for (let i = 0; i < trials; i++) {
-        const game = new Game(p0, p1, table, {render: false, logs: false, deck, hand});
+        const game = new Game(p0, p1, table, undefined, {render: false, logs: false, deck, hand});
         const dumbBot = new bot1(game, 0, -1);
         const dumb2 = new bot2(game, 1, -1);//
         window.game = game;
@@ -51,7 +60,7 @@ function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
 }
 window.runSim = runSim;
 
-const game = new Game(p0, p1, table, {hide0: true, hide1: false});
+const game = new Game(p0, p1, table, mkNotifs(5), {hide0: true, hide1: false});
 const bot1 = new Bots.User(game, 0, 600);
 const bot2 = new Bots.User(game, 1, 600);
 window.game = game;

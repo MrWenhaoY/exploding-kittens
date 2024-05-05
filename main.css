@@ -40,3 +40,23 @@ body {
     border: 3px solid rgb(105, 200, 255);
     padding: 0px;
 }
+
+#notifications {
+    font-family: auto;
+    color: rgb(255, 162, 0);
+    font-size: 20px;
+    border: 5px double rgb(255, 153, 0);
+    background-color: rgb(253, 255, 194);
+}
+
+.notif0 {
+    color: rgb(255, 1, 1);
+    background-color: rgb(230, 230, 230);
+    border: 1px solid rgb(244, 244, 244);
+}
+
+.notif1 {
+    background-color: rgb(230, 230, 230);
+    color: rgb(7, 147, 255);
+    border: 1px solid rgb(244, 244, 244);
+}
