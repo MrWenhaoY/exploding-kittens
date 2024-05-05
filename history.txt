@@ -54,4 +54,5 @@
 5/5/2024
 - Worked on GUI
   - Add option to hide hands
+  - Add User class in Bots.js (for attaching event handlers) & worked on CSS
 - Update README.md to include brief runtime analysis

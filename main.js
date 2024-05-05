@@ -52,14 +52,15 @@ function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
     }
 }
 window.runSim = runSim;
-/*
-const game = new Game(p0, p1, table);
-const bot1 = new Bots.DumbBot(game, 0, 600);
-const bot2 = new DP_20Bot(game, 1, 600);
-window.game = game;
-game.handlers.turn.forEach(x => x(game));*/
 
-runSim(DP_20Bot, Bots.DumbBot, 100000, {skip: 4, defuse: 2, attack: 4}, {defuse: 1});
+const game = new Game(p0, p1, table, {hide0: true, hide1: false});
+const bot1 = new DP_20Bot(game, 0, 600);
+new Bots.User(game, 1)
+//const bot2 = new DP_20Bot(game, 1, 600);
+window.game = game;
+game.handlers.turn.forEach(x => x(game));
+
+//runSim(DP_20Bot, Bots.DumbBot, 100000, {skip: 4, defuse: 2, attack: 4}, {defuse: 1});
 
 
 // Figure out a way to wait for player input

@@ -22,4 +22,4 @@ export function objSum(obj) {
     return Object.keys(obj).reduce((acc, e) => acc + obj[e], 0);
 }
 
-export const zeroUndef = x => x ? x : 0;
+export const zeroUndef = x => x ? x : 0; // or alternatively, x => x || 0
