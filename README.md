@@ -45,4 +45,19 @@ some adjusted slightly.
 
 ## Optimality
 
-The algorithms here are designed to be 
+The algorithms here are designed to be optimal. In this context, we define optimal to be
+minimax, or "highest lowest win rate". In other words, an optimal algorithm maximizes their
+lowest possible win rate against all possible opponents.
+
+While this means that the algorithm can never be exploited, it also means that the algorithm
+is not as good at exploiting others. Against a particular given opponent, there may be better
+strategies with higher win rates. However, against any opponent, an optimal algorithm provides
+the best guarantee of minimum win rate.
+
+Here, we define win rate as the "expected win rate" across a large number of games.
+In other words, the same definition as expected value. Within a single game, the algorithm will
+either win or lose. However, across a large number of games, it is expected that the algorithm
+will win a proprotion of games equal to its win rate.
+
+## Algorithm Design
+
