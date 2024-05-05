@@ -9,11 +9,11 @@ When making a choice, we will have to calculate probabilities of opponent's hand
 to find the choice with the best expected value.
 
 
-Select Data: 
+Select Data: (Experimental is 100,000 games)
 With 4 skips, 2 defuses, 3 attacks:
  - Expected optimal winrate: 0.5950722285652231
  - Experimental Winrate as P1 against self: 0.59388
- - Experimental Winrate as P1 against DumbBot: 0.74966
+ - Experimental Winrates as P1 against DumbBot: 0.74966, 0.72708, 0.72774
 With 4 skips, 2 defuses, 4 attacks:
  - Expected optimal winrate as P1: 0.4852302630119859
  - Experimental Winrate as P1 against self: 0.48447

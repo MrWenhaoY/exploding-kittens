@@ -6,7 +6,11 @@ Attacks, defuses, and skips in the deck
 import { deepCopy, objAdd, objComp, objSum, zeroUndef } from "../utility.js";
 import { Bot } from "../bots.js";
 
-export const results = {};
+import data from './2.0-attack.json' assert { type: 'json' };
+export const results = data;
+console.log(data);
+console.log(results);
+//export const results = {};
 
 function getChance(deck, ySkip, oSkip, yAttack, oAttack, yDef, oDef, dSkip, dAttack, currTurns) {
     return currTurns <= 1 ? 1 - getResult(deck, oSkip, ySkip, oAttack, yAttack, oDef, yDef, dSkip, dAttack, 1).winRate 
@@ -25,6 +29,7 @@ export function getResult(deckSize, yourSkip, oppSkip, yourAttack, oppAttack, yo
         curr = curr[x];
     })
     if (!curr[turns]) {
+        console.log("New call with ", deckSize, yourSkip, oppSkip, yourAttack, oppAttack, yourDefuse, oppDefuse, deckSkip, deckAttack, turns);
         // Uncalculated; calculate now
         if (deckSize === 1) {
             if (deckSkip !== 0 || deckAttack !== 0) throw new Error(`Invalid deckSkip ${deckSkip} and deckAttack ${deckAttack} values`);
