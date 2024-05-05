@@ -30,3 +30,13 @@ body {
         vertical-align: top;
     }
 }
+
+.playable0:hover {
+    border: 3px solid rgb(117, 245, 117);
+    padding: 0px;
+}
+
+.playable1:hover {
+    border: 3px solid rgb(119, 205, 255);
+    padding: 0px;
+}

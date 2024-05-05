@@ -64,6 +64,7 @@ export class SkipBot extends Bot {
     }
 }
 
+/* // This Bot does not seem to work well
 export class DrawBot extends SkipBot {
     action() {
         if (this.game.turn % 2 !== this.playerId) return; 
@@ -78,24 +79,40 @@ export class DrawBot extends SkipBot {
         return this.game.play(this.playerId, "skip");
         else return this.game.draw(this.playerId);
     }
-}
-/*
-export class DP_13Bot extends Bot {
-    action() {
-        // Assumes game with only skips and starting defuses
-        // Looks at opponent's hand because I'm too lazy to calculate it but this is calculatable (given above assumption)
-        if (this.game.turn % 2 !== this.playerId) return; 
-        const selfHand = this.game.players[this.playerId];
-        const oppHand = this.game.players[1 - this.playerId];
-        const r = DP_13(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0);
-        if (r.move === "either" || r.move === "draw") return this.game.draw(this.playerId);
-        else {
-            if (!selfHand.skip) {
-                console.log(this.game.deck.length, selfHand["skip"] ? selfHand["skip"] : 0, oppHand["skip"] ? oppHand["skip"] : 0, selfHand["defuse"] ? selfHand["defuse"] : 0, oppHand["defuse"] ? oppHand["defuse"] : 0)
-                console.log(selfHand, r);
-                throw new Error("Tried to play skip with no skip in hand!");
-            }
-            return this.game.play(this.playerId, "skip");
-        }
-    }
 }*/
+
+const isPlayable = name => name !== "explode" && name !== "defuse";
+export class User {
+    // This is for user-controls & interface
+    constructor(game, playerId, _sleepTime, _handlers) {
+        this.playerId = playerId;
+        
+        const deck = document.getElementById("deck");
+
+        let playables = [deck];
+        const markPlayables = () => playables.forEach(x => x.classList[game.turn === this.playerId ? "add" : "remove"]("playable"+String(this.playerId)));
+
+        const drawListener = () => {
+            if (game.turn === this.playerId) setTimeout(() => game.draw(this.playerId), 1);
+        }
+        deck.addEventListener("click", drawListener)
+        game.handlers.render.push((p0, p1, table) => {
+            playables = [deck];
+            const selfElem = playerId ? p1 : p0;
+            const cards = selfElem.childNodes;
+            for (let card of cards) {
+                if (isPlayable(card.cardName)) {
+                    playables.push(card);
+                    card.addEventListener("click", () => game.play(this.playerId, card.cardName));
+                }
+            }
+            markPlayables();
+        });
+        game.handlers.turn.push(markPlayables);
+        game.handlers.end.push(() => {
+            playables.forEach(x => x.classList.remove("playable" + String(this.playerId)));
+            playables = [];
+            deck.removeEventListener("click", drawListener);
+        })
+    }
+}
