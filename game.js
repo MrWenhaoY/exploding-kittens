@@ -46,7 +46,8 @@ export class Game {
             draw: [],
             play: [],
             turn: [],
-            end: []
+            end: [],
+            render: []
         }
         this.p0Element = p0Element;
         this.p1Element = p1Element;
@@ -89,7 +90,7 @@ export class Game {
         if (this.turn % 2 == playerId && this.players[playerId][card] > 0 && this.winner === -1) {
             if (card === "defuse") {
                 console.log("Defuse may not be played normally.");
-                return;
+                return false;
             }
             if (this.settings.logs) console.log("Player " + String(playerId) + " is playing " + String(card) + ".");
             if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
@@ -110,12 +111,12 @@ export class Game {
                 case "defuse":
                     // Defuse may not be played normally
                     // This statement should never be reached
-                    break;
+                    return false;
                 default:
                     console.warn("Card '" + String(card) + "' not recognized.");
-                    return;
+                    return false;
             }
-            
+            return true;
         }
     }
     draw(playerId) {
@@ -179,6 +180,7 @@ export class Game {
                     const card = document.createElement("img");
                     card.src = "./Assets/" + (this.settings["hide" + String(id)] && name !== "explode" ? "card-back": name) + ".png";
                     card.classList.add("card");
+                    card.cardName = name;
                     element.appendChild(card);
                 }
             });
@@ -226,5 +228,7 @@ export class Game {
         turnNum.textContent = this.turn;
         const turnArrow = document.getElementById("turn-direction");
         turnArrow.src = "./Assets/" + "p" + this.turn + "-turn-arrow" + ".png";
+
+        this.handlers.render.forEach(f => f(this.p0Element, this.p1Element, this.tableElement));
     }
 }
