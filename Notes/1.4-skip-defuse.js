@@ -79,6 +79,7 @@ export class DP_14Bot extends Bot {
             // Rebalance probabilities
             const sum = probs.reduce((acc, e) => acc + e, 0);
             t.oppHand.forEach((info, i) => info.prob = probs[i]/sum);
+            t.deckContents.forEach((info, i) => info.prob = probs[i]/sum);
             //console.log("After updating oppHand odds", deepCopy(t.oppHand));//
         }
         function drawHandler(playerId, isExplode, t) {
