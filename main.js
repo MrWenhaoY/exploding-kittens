@@ -3,7 +3,7 @@ import * as Bots from "./bots.js";
 import * as c from "./calculations.js";
 import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js";
 import { DP_14Bot } from "./Notes/1.4-skip-defuse.js";
-import {results, getResult} from "./Notes/2.0-attack.js"
+import {results, getResult, DP_20Bot} from "./Notes/2.0-attack.js"
 //import {fs} from "fs"; // Need to get fs though
 
 // WARNING: Modifies input!!!
@@ -51,14 +51,14 @@ function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
         game.handlers.turn.forEach(x => x(game));
     }
 }
-
+/*
 const game = new Game(p0, p1, table);
 const bot1 = new Bots.DumbBot(game, 0, 600);
-//const bot2 = new Bots.DumbBot(game, 1, 600);
+const bot2 = new DP_20Bot(game, 1, 600);
 window.game = game;
-game.handlers.turn.forEach(x => x(game));
+game.handlers.turn.forEach(x => x(game));*/
 
-//runSim(Bots.DumbBot, Bots.DumbBot, 100000, {skip: 4, defuse: 2}, {defuse: 1});
+runSim(DP_20Bot, DP_20Bot, 100000, {skip: 4, defuse: 2, attack: 4}, {defuse: 1});
 
 
 // Figure out a way to wait for player input
