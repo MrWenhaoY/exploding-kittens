@@ -86,7 +86,8 @@ export class User {
     // This is for user-controls & interface
     constructor(game, playerId, _sleepTime, _handlers) {
         this.playerId = playerId;
-        
+        game.settings["hide" + String(playerId)] = false;
+
         const deck = document.getElementById("deck");
 
         let playables = [deck];
@@ -114,5 +115,6 @@ export class User {
             playables = [];
             deck.removeEventListener("click", drawListener);
         })
+        game.render();
     }
 }

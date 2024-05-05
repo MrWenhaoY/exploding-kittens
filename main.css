@@ -32,11 +32,11 @@ body {
 }
 
 .playable0:hover {
-    border: 3px solid rgb(117, 245, 117);
+    border: 3px solid rgb(241, 103, 103);
     padding: 0px;
 }
 
 .playable1:hover {
-    border: 3px solid rgb(119, 205, 255);
+    border: 3px solid rgb(105, 200, 255);
     padding: 0px;
 }
