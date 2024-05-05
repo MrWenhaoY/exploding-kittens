@@ -8,9 +8,6 @@ import { Bot } from "../bots.js";
 
 import data from './2.0-attack.json' assert { type: 'json' };
 export const results = data;
-console.log(data);
-console.log(results);
-//export const results = {};
 
 function getChance(deck, ySkip, oSkip, yAttack, oAttack, yDef, oDef, dSkip, dAttack, currTurns) {
     return currTurns <= 1 ? 1 - getResult(deck, oSkip, ySkip, oAttack, yAttack, oDef, yDef, dSkip, dAttack, 1).winRate 
