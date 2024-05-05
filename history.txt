@@ -45,3 +45,6 @@
 - Did some experimental analysis of the algorithm, got some puzzling results
 - Turns out I had broken running a game with no-delay bots, and that caused problems with simulation. Fixed now.
 - Fixed 14_DP analysis
+- Add Attack img
+- Implement Attack card
+- Create DP for winRate given a game state in a game with attacks, skips, and defuses
