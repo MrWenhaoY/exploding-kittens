@@ -6,9 +6,9 @@ Attacks, defuses, and skips in the deck
 import { deepCopy, objAdd, objComp, objSub, objSum, zeroUndef } from "../utility.js";
 import { Bot } from "../bots.js";
 
-//import data from './2.0-attack.json' assert { type: 'json' };
-//export const results = data;
-export const results = {};
+import data from './3.0-steal-hpc.json' assert { type: 'json' };
+export const results = data;
+//export const results = {};
 
 function getChance(deckSize, uSkip, oSkip, uAtk, oAtk, uDef, oDef, uhpc, ohpc, dSkip, dAtk, dhpc, currTurns) {
     return currTurns <= 1 ? 1 - getResult(deckSize, oSkip, uSkip, oAtk, uAtk, oDef, uDef, ohpc, uhpc, dSkip, dAtk, dhpc, 1).winRate 
@@ -60,6 +60,10 @@ export function getResult(deckSize, uSkip, oSkip, uAtk, oAtk, uDef, oDef, uhpc, 
                 throw new Error("Negative draw winRate");
             }
             curr[turns] = {winRate: Math.max(draw, skip, attack, hpc), draw, skip, attack, hpc};
+            // There are cases where you could steal but you shouldn't (even if your opponent has more than just hpcs)
+            // There are cases where you got attacked but attacking is worse than skipping
+            // There are cases where there is only 1 card left in the deck but you shouldn't steal (yet) even though you could
+            //if (deckSize === 1 && hpc !== -1 && curr[turns].winRate - hpc > 0.00001) {console.log(deckSize, uSkip, oSkip, uAtk, oAtk, uDef, oDef, uhpc, ohpc, dSkip, dAtk, dhpc, turns); console.log(curr[turns]); throw new Error();}
         }  
     }
     if (curr[turns].winRate < 0) {
