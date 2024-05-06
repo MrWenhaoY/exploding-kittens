@@ -107,14 +107,11 @@ export class Game {
             objAdd(this.discardCounts, card);
             this.handlers.play.forEach(f => f(playerId, card, this));
             switch(card) {
-                case "skip":
-                    if (this.settings.render) this.notify("Player " + String(playerId) + " played " + "skip", playerId);
-                    this.endTurn();
-                    break;
                 case "attack":
                     this.turn = 1 - this.turn;
-                    this.stackedTurns = 2;
-                    if (this.settings.render) this.notify("Player " + String(playerId) + " played " + "attack", playerId);
+                    this.stackedTurns = 2; // Ending the turn and notifying is same as for skip
+                case "skip":
+                    if (this.settings.render) this.notify("Player " + String(playerId) + " played " + card, playerId);
                     this.endTurn();
                     break;
                 case "hairypotatocat":
