@@ -1,4 +1,4 @@
-import { objSum } from "./utility";
+import { objSum } from "./utility.js";
 
 export class Bot {
     constructor(game, playerId, sleepTime=200, handlers={draw: [], play: []}) {
