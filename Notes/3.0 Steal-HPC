@@ -1,0 +1,24 @@
+Game with skips, attacks, defuses, and hairy potato cats. Opponent plays optimally.
+
+Assumes 1 exploding kitten
+
+WE WILL NOT BE TRYING TO READ THE OPPONENT!
+We assume that the opponent does not try to read us by our moves
+
+When making a choice, we will have to calculate probabilities of opponent's hands and cards in deck
+to find the choice with the best expected value.
+
+// There is definitely a mismatch somewhere
+
+Select Data: (Experimental is 10,000 games)
+With 4 skips, 2 defuses, 3 attacks, 4 HPCs:
+ - Expected optimal winrate: 0.5033041753898129
+With 4 skips, 2 defuses, 4 attacks, 4 HPCs:
+ - Expected optimal winrate as P1: 0.4999938601873691
+ - Experimental Winrate as P1 against self: 0.51795, 0.5134, 0.5138
+With 4 skips, 2 defuses, 3 attacks, 6 HPCs:
+ - Expected optimal winrate as P1: 0.5341430065635184
+ - Experimental Winrate as P1 against self: 0.5073
+
+Conclusions:
+ - This algorithm is slow!
