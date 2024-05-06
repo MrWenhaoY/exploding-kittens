@@ -1,4 +1,4 @@
-import { objAdd } from "./utility.js";
+import { objAdd, objSub, objSum } from "./utility.js";
 
 export class Game {
     constructor(p0Element, p1Element, tableElement, notify, options={}) {
@@ -9,7 +9,8 @@ export class Game {
                 "skip": 4,
                 "attack": 4,
                 "explode": 1,
-                "defuse": 2
+                "defuse": 2,
+                "hairypotatocat": 0
             },
             hand: {
                 "defuse": 1,
@@ -93,22 +94,46 @@ export class Game {
                 console.log("Defuse may not be played normally.");
                 return false;
             }
+            if (card === "hairypotatocat" && this.players[playerId][card] < 2 || Object.keys(this.players[1 - playerId]).length === 0) {
+                // Cat cards must be played in a pair, and the opponent must have cards for you to steal
+                console.log("Hairy Potato Cats may not be played alone.");
+                return false;
+            }
             if (this.settings.logs) console.log("Player " + String(playerId) + " is playing " + String(card) + ".");
-            if (this.settings.render) this.notify("Player " + String(playerId) + " played " + String(card), playerId);
-            if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
+            
+            //if (--this.players[playerId][card] <= 0) delete this.players[playerId][card];
+            objSub(this.players[playerId], card);
+            this.discard.unshift(card);
+            objAdd(this.discardCounts, card);
             this.handlers.play.forEach(f => f(playerId, card, this));
             switch(card) {
                 case "skip":
-                    this.discard.unshift(card);
-                    objAdd(this.discardCounts, card);
+                    if (this.settings.render) this.notify("Player " + String(playerId) + " played " + "skip", playerId);
                     this.endTurn();
                     break;
                 case "attack":
-                    this.discard.unshift(card);
-                    objAdd(this.discardCounts, card);
                     this.turn = 1 - this.turn;
                     this.stackedTurns = 2;
+                    if (this.settings.render) this.notify("Player " + String(playerId) + " played " + "attack", playerId);
                     this.endTurn();
+                    break;
+                case "hairypotatocat":
+                    objSub(this.players[playerId], card); // You are expending two copies
+                    this.discard.unshift(card);
+                    objAdd(this.discardCounts, card);
+                    // Pick a random card
+                    const hand = this.players[1-playerId];
+                    const cards = Object.keys(hand);
+                    let sum = objSum(hand);
+                    let i = 0;
+                    while (Math.random() > hand[cards[i]]/sum) {
+                        sum -= hand[cards[i++]];
+                    }
+                    const stolen = cards[i];
+                    objSub(hand, stolen);
+                    objAdd(this.players[playerId], stolen);
+                    if (this.settings.render) this.notify("Player " + String(playerId) + " played a pair of " + card + "s and stole " + stolen + " from Player " + String(1 - playerId), playerId);
+                    this.render();
                     break;
                 case "defuse":
                     // Defuse may not be played normally
