@@ -26,4 +26,11 @@ export function objSum(obj) {
     return Object.keys(obj).reduce((acc, e) => acc + obj[e], 0);
 }
 
+export function verifyResults(res) {
+    return Object.values(res).every(val => {
+        if (typeof val === "object" ? verifyResults(val) : typeof val === "string" ? true : (0 <= val && val <= 1) || val === -1) return true;
+        else {console.log(res); return false;}
+    });
+}
+
 export const zeroUndef = x => x ? x : 0; // or alternatively, x => x || 0

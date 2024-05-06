@@ -58,3 +58,6 @@
   - Game is now playable! Use User class, click on card to play and deck to draw!
   - Add event log
 - Update README.md to include brief runtime analysis
+- Work on presentation
+- Create DP for winRate for game with attacks, skips, defuses, and hairy potato cats
+- Create utility function verifyResults
