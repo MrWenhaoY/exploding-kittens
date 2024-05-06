@@ -123,11 +123,11 @@ export class Game {
                     while (Math.random() > hand[cards[i]]/sum) {
                         sum -= hand[cards[i++]];
                     }
+                    const stolen = cards[i];
                     // First activate handlers
                     this.handlers.play.forEach(f => f(playerId, card, stolen));
                     
                     // Now enact steal
-                    const stolen = cards[i];
                     objSub(hand, stolen);
                     objAdd(this.players[playerId], stolen);
                     
