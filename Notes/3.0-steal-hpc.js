@@ -3,7 +3,7 @@ Attacks, defuses, and skips in the deck
 
 */
 
-import { deepCopy, objAdd, objComp, objSum, zeroUndef } from "../utility.js";
+import { deepCopy, objAdd, objComp, objSub, objSum, zeroUndef } from "../utility.js";
 import { Bot } from "../bots.js";
 
 //import data from './2.0-attack.json' assert { type: 'json' };
@@ -36,8 +36,8 @@ export function getResult(deckSize, uSkip, oSkip, uAtk, oAtk, uDef, oDef, uhpc, 
             const skip = uSkip < 1 ? -1 : getChance(deckSize, uSkip - 1, oSkip, uAtk, oAtk, uDef, oDef, uhpc, ohpc, dSkip, dAtk, dhpc, turns);
             // Calculate hpc
             let hpc = 0;
-            if (uhpc >= 2) {
-                const oppHandSize = oSkip + oAtk + oDef + ohpc;
+            const oppHandSize = oSkip + oAtk + oDef + ohpc;
+            if (uhpc >= 2 && oppHandSize > 0) {
                 if (oSkip > 0) hpc += oSkip / oppHandSize * getResult(deckSize, uSkip + 1, oSkip - 1, uAtk, oAtk, uDef, oDef, uhpc - 2, ohpc, dSkip, dAtk, dhpc, turns).winRate;
                 if (oAtk > 0) hpc += oAtk / oppHandSize * getResult(deckSize, uSkip, oSkip, uAtk + 1, oAtk - 1, uDef, oDef, uhpc - 2, ohpc, dSkip, dAtk, dhpc, turns).winRate;
                 if (oDef > 0) hpc += oDef / oppHandSize * getResult(deckSize, uSkip, oSkip, uAtk, oAtk, uDef + 1, oDef - 1, uhpc - 2, ohpc, dSkip, dAtk, dhpc, turns).winRate;
@@ -70,21 +70,21 @@ export function getResult(deckSize, uSkip, oSkip, uAtk, oAtk, uDef, oDef, uhpc, 
     return curr[turns];
 }
 
-/*
+
 // There are defuses and the deck and we may not always know for certain what cards are in the opponent's hand
-export class DP_20Bot extends Bot {
+export class DP_30Bot extends Bot {
     constructor(game, playerId, sleepTime=200) {
-        function playHandler(playerId, card, _game, self) {
+        function playHandler(playerId, card, special, self) {
             if (playerId === self.playerId) return; // We played this card
             // Update deck tracking
             //console.log("Before updating odds", deepCopy(self.poss));//
             const probs = [];
             for (let i = self.poss.length - 1; i >= 0; i--) {
                 const hand = self.poss[i].hand;
-                if (card in hand) {
+                if (zeroUndef(hand[card] >= card === "hairypotatocat" ? 2 : 1)) {
                     // We do not analyze the probability based on the number of thes card the opponent has
                     probs.unshift(self.poss[i].prob);
-                    if (--hand[card] === 0) delete hand[card]; // Should never be < 0
+                    objSub(hand, card, card === "hairypotatocat" ? 2 : 1)
                 } else {
                     // We have eliminated this possibility
                     self.poss.splice(i, 1);
@@ -93,6 +93,11 @@ export class DP_20Bot extends Bot {
             // Rebalance probabilities
             const sum = probs.reduce((acc, e) => acc + e, 0);
             self.poss.forEach((info, i) => info.prob = probs[i]/sum);
+
+            if (card === "hairypotatcat") {
+                // Add the stolen card
+                self.poss.forEach((info, i) => objAdd(info.hand, special));
+            }
             //console.log("After updating odds", deepCopy(self.poss));//
         }
         function drawHandler(playerId, isExplode, self) {
@@ -139,22 +144,30 @@ export class DP_20Bot extends Bot {
         const mySkip = zeroUndef(myHand["skip"]);
         const myDef = zeroUndef(myHand["defuse"]);
         const myAttack = zeroUndef(myHand["attack"]);
+        const myhpc = zeroUndef(myHand["hpc"]);
         let evSkip = 0;
         let evDraw = 0;
         let evAttack = 0;
+        let evhpc = 0;
         this.poss.forEach((info, i) => {
-            const result = getResult(objSum(info.deck), mySkip, zeroUndef(info.hand["skip"]), myAttack, zeroUndef(info.hand["attack"]), myDef, zeroUndef(info.hand["defuse"]), zeroUndef(info.deck["skip"]), zeroUndef(info.deck["attack"]), game.stackedTurns + 1);
+            const result = getResult(objSum(info.deck), mySkip, zeroUndef(info.hand["skip"]), myAttack, zeroUndef(info.hand["attack"]), myDef, zeroUndef(info.hand["defuse"]), myhpc, zeroUndef(info.hand["hairypotatocat"]), zeroUndef(info.deck["skip"]), zeroUndef(info.deck["attack"]), zeroUndef(info.deck["hairypotatocat"]), game.stackedTurns + 1);
             //console.log(objSum(info.deck), mySkip, zeroUndef(info.hand["skip"]), myAttack, zeroUndef(info.hand["attack"]), myDef, zeroUndef(info.hand["defuse"]), zeroUndef(info.deck["skip"]), zeroUndef(info.deck["attack"]), game.stackedTurns + 1);
             evSkip += info.prob * result.skip;
             evDraw += info.prob * result.draw;
             evAttack += info.prob * result.attack;
+            evhpc += info.prob * result.hpc;
             //console.log(evSkip, evDraw, evAttack);
         })
-        const best = Math.max(evSkip, evDraw, evAttack);
-        if (evSkip < -1.00001 || evAttack < -1.00001) throw new Error(`Invalid EV: evSkip: ${evSkip}, evAttack: ${evAttack}`);
+        const best = Math.max(evSkip, evDraw, evAttack, evhpc);
+        if (evSkip < -1.00001 || evAttack < -1.00001 || evhpc < -1.00001) throw new Error(`Invalid EV: evSkip: ${evSkip}, evAttack: ${evAttack}, evhpc: ${evhpc}`);
         if (evDraw > 1.00001) throw new Error(`Expected value of drawing exceeds 1 (is ${evDraw})`);
         
-        if (evSkip === best) {
+        if (evhpc === best) {
+            if (zeroUndef(myHand.hpc) < 2) {
+                console.warn(selfHand);
+                throw new Error("Tried to play hpc while not having enough");
+            }
+        } else if (evSkip === best) {
             if (!myHand.skip) {
                 console.warn(selfHand);
                 throw new Error("Tried to play skip with no skip in hand!");
@@ -191,4 +204,4 @@ export class DP_20Bot extends Bot {
             //console.log("After rebalancing", deepCopy(this.poss));//
         }
     }
-}*/
+}

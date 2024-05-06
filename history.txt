@@ -48,7 +48,7 @@
 - Add Attack img
 - Implement Attack card
 - Create DP for winRate given a game state in a game with attacks, skips, and defuses
-- Create bot for game with attacks
+- Create bot (DP_20) for game with attacks
 - Analyze game with attacks, skips, defuses
 - Update README.md to include game rule explanation, definition of optimality, and high level overview of DP_20
 5/5/2024
@@ -61,3 +61,4 @@
 - Work on presentation
 - Create DP for winRate for game with attacks, skips, defuses, and hairy potato cats
 - Create utility function verifyResults
+- Create DP_30 bot
