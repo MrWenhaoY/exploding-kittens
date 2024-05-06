@@ -94,7 +94,7 @@ export class Game {
                 console.log("Defuse may not be played normally.");
                 return false;
             }
-            if (card === "hairypotatocat" && this.players[playerId][card] < 2 || Object.keys(this.players[1 - playerId]).length === 0) {
+            if (card === "hairypotatocat" && (this.players[playerId][card] < 2 || Object.keys(this.players[1 - playerId]).length === 0)) {
                 // Cat cards must be played in a pair, and the opponent must have cards for you to steal
                 console.log("Hairy Potato Cats may not be played alone.");
                 return false;
@@ -105,19 +105,16 @@ export class Game {
             objSub(this.players[playerId], card);
             this.discard.unshift(card);
             objAdd(this.discardCounts, card);
-            this.handlers.play.forEach(f => f(playerId, card, this));
             switch(card) {
                 case "attack":
                     this.turn = 1 - this.turn;
                     this.stackedTurns = 2; // Ending the turn and notifying is same as for skip
                 case "skip":
+                    this.handlers.play.forEach(f => f(playerId, card, undefined));
                     if (this.settings.render) this.notify("Player " + String(playerId) + " played " + card, playerId);
                     this.endTurn();
                     break;
                 case "hairypotatocat":
-                    objSub(this.players[playerId], card); // You are expending two copies
-                    this.discard.unshift(card);
-                    objAdd(this.discardCounts, card);
                     // Pick a random card
                     const hand = this.players[1-playerId];
                     const cards = Object.keys(hand);
@@ -126,11 +123,21 @@ export class Game {
                     while (Math.random() > hand[cards[i]]/sum) {
                         sum -= hand[cards[i++]];
                     }
+                    // First activate handlers
+                    this.handlers.play.forEach(f => f(playerId, card, stolen));
+                    
+                    // Now enact steal
                     const stolen = cards[i];
                     objSub(hand, stolen);
                     objAdd(this.players[playerId], stolen);
+                    
+                    // Expend the extra cat
+                    objSub(this.players[playerId], card);
+                    this.discard.unshift(card);
+                    objAdd(this.discardCounts, card);
+                    
                     if (this.settings.render) this.notify("Player " + String(playerId) + " played a pair of " + card + "s and stole " + stolen + " from Player " + String(1 - playerId), playerId);
-                    this.render();
+                    this.render(); // To automatically show update
                     break;
                 case "defuse":
                     // Defuse may not be played normally
