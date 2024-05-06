@@ -13,6 +13,10 @@ export function objAdd(obj, item, qty=1) {
     item in obj ? obj[item] += qty : obj[item] = qty;
 }
 
+export function objSub(obj, prop, qty=1) {
+    if ((obj[prop] -= qty) <= 0) delete obj[prop];
+}
+
 export function objComp(obj1, obj2) {
     const k1 = Object.keys(obj1);
     return k1.length === Object.keys(obj2).length && k1.every(k => obj1[k] === obj2[k]);
