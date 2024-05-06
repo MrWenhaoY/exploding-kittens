@@ -143,7 +143,7 @@ export class Game {
                     this.deck.splice(Math.floor((this.deck.length + 1) * Math.random()), 0, "explode");
                 } else {
                     if (this.settings.logs) console.log("Player: " + String(playerId) + " has exploded.");
-                    if (this.settings.render) this.notify("💣 Player " + String(playerId) + " has exploded! 💣", playerId);
+                    if (this.settings.render) this.notify("💣 Player " + String(playerId) + " drew an Exploding Kitten and exploded! 💣", playerId);
                     this.endGame(1 - playerId);
                     return;
                 }
