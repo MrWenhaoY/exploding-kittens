@@ -1,32 +1,19 @@
 import {Game} from "./game.js";
 import * as Bots from "./bots.js";
-import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js";
-import { DP_14Bot } from "./Notes/1.4-skip-defuse.js";
-import {results, getResult, DP_20Bot} from "./Notes/2.0-attack.js"
-//import {fs} from "fs"; // Need to get fs though
+import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js"; // Optimal play in game with skips in deck, defuse in hand
+import { DP_14Bot } from "./Notes/1.4-skip-defuse.js"; // Optimal play in game with skips and defuses in deck
+import {DP_20Bot} from "./Notes/2.0-attack.js" // Optimal play in games with skips, defuses, attacks in deck
+import {results, getResult, DP_30Bot} from "./Notes/3.0-steal-hpc.js"; // Optimal play with skips, defuses, attacks, hairypotatocats
+import { verifyResults } from "./utility.js";
 
-// WARNING: Modifies input!!!
-window.modJSON = function modJSON(obj, dim) {
-    // Base case with dim=1
-    if (dim === 1) {
-        for (let key in obj) {
-            obj[key] = JSON.stringify(obj[key]);
-        }
-        return obj;
-    }
-    for (let key in obj) {
-        obj[key] = modJSON(obj[key], dim-1);
-    }
-    return obj;
-}
-
-//console.log(JSON.stringify(modJSON(winChanceDP(10), 3)));
-
+// For debugging
 window.getResult = getResult;
 window.results = results;
 window.Game = Game;
 window.Bots = Bots;
+window.verifyResults = verifyResults;
 
+// For rendering the website
 const p0 = document.getElementById("p0-cards");
 const p1 = document.getElementById("p1-cards");
 const table = document.getElementById("table");
@@ -43,6 +30,7 @@ const mkNotifs = (limit) => {
     };
 }
 
+// For running simulations
 function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
     const records = [];
     window.records = records;
@@ -58,15 +46,18 @@ function runSim(bot1, bot2, trials=1000, deck={}, hand={}) {
         game.handlers.turn.forEach(x => x(game));
     }
 }
-window.runSim = runSim;
 
-const game = new Game(p0, p1, table, mkNotifs(5), {deck: {skip: 4, defuse: 2, attack: 3}, hide0: true, hide1: true});
+/* // Example game setup
+const game = new Game(p0, p1, table, mkNotifs(5), {deck: {skip: 4, defuse: 2, attack: 4, hairypotatocat: 4}, hide0: true, hide1: true});
+const bot1 = new Bots.User(game, 0, 900);
+const bot2 = new DP_30Bot(game, 1, 900);*/
+
+const game = new Game(p0, p1, table, mkNotifs(5), {deck: {skip: 4, defuse: 2, attack: 3, hairypotatocat: 0}, hide0: false, hide1: false})
 const bot1 = new DP_20Bot(game, 0, 900);
-const bot2 = new Bots.User(game, 1, 600);
-window.game = game;
-game.handlers.turn.forEach(x => x(game));
+const bot2 = new Bots.DumbBot(game, 1, 900);
 
-//runSim(DP_20Bot, Bots.DumbBot, 100000, {skip: 4, defuse: 2, attack: 3}, {defuse: 1});
+window.game = game; // For debugging
+game.handlers.turn.forEach(x => x(game)); // To start the game off if a bot goes first
 
-
-// Figure out a way to wait for player input
+// Example use of runSim
+//runSim(DP_30Bot, DP_30Bot, 10000, {skip: 4, defuse: 2, attack: 4, hairypotatocat: 4}, {defuse: 1});
