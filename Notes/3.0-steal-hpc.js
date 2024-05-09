@@ -6,9 +6,9 @@ Attacks, defuses, and skips in the deck
 import { deepCopy, objAdd, objComp, objSub, objSum, zeroUndef } from "../utility.js";
 import { Bot } from "../bots.js";
 
-import data from './3.0-steal-hpc.json' assert { type: 'json' };
-export const results = data;
-//export const results = {};
+//import data from './3.0-steal-hpc.json' assert { type: 'json' };
+//export const results = data;
+export const results = {};
 
 function getChance(deckSize, uSkip, oSkip, uAtk, oAtk, uDef, oDef, uhpc, ohpc, dSkip, dAtk, dhpc, currTurns) {
     return currTurns <= 1 ? 1 - getResult(deckSize, oSkip, uSkip, oAtk, uAtk, oDef, uDef, ohpc, uhpc, dSkip, dAtk, dhpc, 1).winRate 

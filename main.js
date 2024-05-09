@@ -3,12 +3,12 @@ import * as Bots from "./bots.js";
 import {DP_13Bot} from "./Notes/1.3-skip-optimal+defuse.js"; // Optimal play in game with skips in deck, defuse in hand
 import { DP_14Bot } from "./Notes/1.4-skip-defuse.js"; // Optimal play in game with skips and defuses in deck
 import {DP_20Bot} from "./Notes/2.0-attack.js" // Optimal play in games with skips, defuses, attacks in deck
-import {results, getResult, DP_30Bot} from "./Notes/3.0-steal-hpc.js"; // Optimal play with skips, defuses, attacks, hairypotatocats
+import {DP_30Bot} from "./Notes/3.0-steal-hpc.js"; // Optimal play with skips, defuses, attacks, hairypotatocats
 import { verifyResults } from "./utility.js";
 
 // For debugging
-window.getResult = getResult;
-window.results = results;
+//window.getResult = getResult;
+//window.results = results;
 window.Game = Game;
 window.Bots = Bots;
 window.verifyResults = verifyResults;
