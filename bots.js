@@ -1,4 +1,4 @@
-import { objSum } from "./utility.js";
+import { objSum, zeroUndef } from "./utility.js";
 
 export class Bot {
     constructor(game, playerId, sleepTime=200, handlers={draw: [], play: []}) {
@@ -46,9 +46,10 @@ export class DumbBot extends Bot {
         if (this.game.turn % 2 !== this.playerId) return; 
         const cards = this.game.players[this.playerId];
         let handSize = objSum(cards) - cards["defuse"];
+        if (zeroUndef(cards["hairypotatocat"]) < 2) handSize -= zeroUndef(cards["hairypotatocat"]);// TODO
         if (Math.random() < handSize / (handSize + this.game.deck.length - 1)) {
             Object.keys(cards).forEach(card => {
-                if (card === "defuse") return;
+                if (card === "defuse" || (card === "hairypotatocat" && zeroUndef(cards["hairypotatocat"]) < 2)) return;
                 if (Math.random() <= cards[card] / handSize) return this.game.play(this.playerId, card);
                 handSize -= cards[card];
             })
