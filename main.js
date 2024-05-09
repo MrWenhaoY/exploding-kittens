@@ -54,7 +54,7 @@ const bot2 = new DP_30Bot(game, 1, 900);*/
 
 const game = new Game(p0, p1, table, mkNotifs(5), {deck: {skip: 4, defuse: 2, attack: 3, hairypotatocat: 0}, hide0: false, hide1: false})
 const bot1 = new DP_20Bot(game, 0, 900);
-const bot2 = new Bots.DumbBot(game, 1, 900);
+const bot2 = new Bots.User(game, 1, 900);
 
 window.game = game; // For debugging
 game.handlers.turn.forEach(x => x(game)); // To start the game off if a bot goes first

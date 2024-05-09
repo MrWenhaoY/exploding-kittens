@@ -1,5 +1,50 @@
 # Exploding Kittens (Bot & Algorithms)
 
+## Usage
+
+You will need to start a server to be able to use this project. 
+I used `python3 -m http.server 3000` to do so and accessed the website using `localhost:3000`.
+Just opening the html file directly may not work as it could have problems loading the images.
+
+Currently, `main.js` is set up run a game where `DP_20` (works with **Skips**, **Attacks**, and **Defuses** in deck)
+is the first player (player 0) and the user is the second player.
+
+`main.js` can be modified to run different bots with different deck compositions.
+Change the class of `bot1` and `bot2` to change the bots that will be the first and second player.
+A list of what each bot does is provided below.
+The deck composition can also be modified. Change the numbers in the `deck` property of the object provided to the
+`Game` constructor to modify the starting deck composition.
+
+`runSim` can be uncommented and used to run large numbers of simulations of two bots against each other.
+The results will be printed to the console in an array named `records`, where a 0 means that player0 won
+and a 1 means that player1 won.
+
+> ### Bots
+> *Please note: Implicitly, all bots work with exactly 1 **Exploding Kitten** in deck, no more, no less.*
+> *(So I will not explicitly mention below that all of the bots working with **Exploding Kittens**.)*
+> 
+> `Bots.User`: The user will be playing this position, not a bot. 
+> This class allows for direct user input (click on a card to play it; click on the deck to draw).
+>
+> `DP_20Bot`: This bot plays optimally in games where the deck contains **Attacks**, **Skips**, and **Defuses**.
+> The deck does not have to contain all those cards, but it cannot contain other types of cards (such as **Hairy Potato Cats**).
+> 
+> `Bots.NullBot`: This bot never plays cards and only draws.
+> 
+> `Bots.DumbBot`: This bot plays cards randomly. 
+> It has an increasing higher chance of playing cards as the number of cards in the deck decrease.
+> 
+> `Bots.SkipBot`: This bot always **Skips** if it can. This bot is optimal when only **Skips** exist and **Defuses** do not.
+> 
+> `DP_13Bot`: This bot is optimal in games where only **Skips** exist in the deck, but players may start with **Defuses** in hand.
+> 
+> `DP_14Bot`: This bot is optimal when no types but **Skips** and **Defuses** exist in the deck. 
+> All `DP` bots with a number greater than or equal to this can handle starting **Defuses** in hand.
+> 
+> `DP_30Bot`: This bot should play optimally in games where the deck contains 
+> **Hairy Potato Cats**, **Attacks**, **Skips**, and **Defuses**.
+> The deck does not have to contain all of these cards but cannot contain cards not listed.
+> This bot has not be completely tested and debugged. It should work well enough but optimality is not 100% guaranteed.
 
 ## Exploding Kittens (Rules)
 

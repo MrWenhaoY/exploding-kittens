@@ -62,3 +62,6 @@
 - Create DP for winRate for game with attacks, skips, defuses, and hairy potato cats
 - Create utility function verifyResults
 - Create DP_30 bot
+5/8/2024
+- Clean up main.js to make it easier for other people to use and understand
+- Update README.md to include instructions on how to run the project
