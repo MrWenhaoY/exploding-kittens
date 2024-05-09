@@ -15,10 +15,13 @@ With 4 skips, 2 defuses, 3 attacks, 4 HPCs:
  - Expected optimal winrate: 0.5033041753898129
 With 4 skips, 2 defuses, 4 attacks, 4 HPCs:
  - Expected optimal winrate as P1: 0.4999938601873691
- - Experimental Winrate as P1 against self: 0.51795, 0.5134, 0.5138
+ - Experimental Winrate as P1 against self: 0.51795, 0.5134, 0.5138 | 0.5220
+ - Experimental Winrate as P1 against DumbBot: 0.6819, 0.6812
+ - Experimental Winrate as P2 against DumbBot: 0.6595, 0.6507 | 0.6547
 With 4 skips, 2 defuses, 3 attacks, 6 HPCs:
  - Expected optimal winrate as P1: 0.5341430065635184
  - Experimental Winrate as P1 against self: 0.5073
+ - Experimental Winrate as P1 against DumbBot: 0.6377, 0.6245
 
 Conclusions:
  - This algorithm is slow!
