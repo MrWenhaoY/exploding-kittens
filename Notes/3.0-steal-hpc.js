@@ -167,10 +167,11 @@ export class DP_30Bot extends Bot {
         if (evDraw > 1.00001) throw new Error(`Expected value of drawing exceeds 1 (is ${evDraw})`);
         
         if (evhpc === best) {
-            if (zeroUndef(myHand.hpc) < 2) {
+            if (zeroUndef(myHand.hairypotatocat) < 2) {
                 console.warn(selfHand);
                 throw new Error("Tried to play hpc while not having enough");
             }
+            return this.game.play(this.playerId, "hairypotatocat");
         } else if (evSkip === best) {
             if (!myHand.skip) {
                 console.warn(selfHand);
